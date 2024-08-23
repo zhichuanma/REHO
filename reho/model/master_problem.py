@@ -439,6 +439,7 @@ class MasterProblem:
         MP_parameters['Costs_inv_rep_SPs'] = df_Performance.Costs_inv + df_Performance.Costs_rep
         MP_parameters['Costs_ft_SPs'] = pd.DataFrame(np.round(df_Performance.Costs_ft, 6)).set_axis(['Costs_ft_SPs'], axis=1)
         MP_parameters['GWP_house_constr_SPs'] = pd.DataFrame(df_Performance.GWP_constr).set_axis(['GWP_house_constr_SPs'], axis=1)
+        MP_parameters['GWP_house_op_SPs'] = pd.DataFrame(df_Performance.GWP_op).set_axis(['GWP_house_op_SPs'], axis=1)
 
         if self.method['save_lca']:
             df_lca_Units = self.return_combined_SP_results(self.results_SP, 'df_lca_Units')

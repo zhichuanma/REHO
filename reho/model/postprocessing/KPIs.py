@@ -559,8 +559,9 @@ def calculate_KPIs(df_Results, infrastructure, buildings_data, cluster, timestam
     # GWP
     # ------------------------------------------------------------------------------------------------------
     df_KPI['gwp_op_m2'] = df_Results["df_Performance"]['GWP_op'].div(df_hsA.ERA)
+    df_KPI['gwp_res_m2'] = df_Results["df_Performance"]['GWP_res'].div(df_hsA.ERA)
     df_KPI['gwp_constr_m2'] = df_Results["df_Performance"]['GWP_constr'].div(df_hsA.ERA)
-    df_KPI['gwp_tot_m2'] = df_KPI['gwp_op_m2'] + df_KPI['gwp_constr_m2']  # [kgCO2-eq/m2/yr]
+    df_KPI['gwp_tot_m2'] = df_KPI['gwp_op_m2'] + df_KPI['gwp_constr_m2'] + df_KPI['gwp_res_m2']  # [kgCO2-eq/m2/yr]
 
     df_G_RES = postcompute_average_emission(df_annual, df_annual_network, df_profiles, df_profiles_network, df_Time, cluster, timestamp_file, emissions_matrix)
     df_KPI = pd.concat([df_KPI, df_G_RES[['gwp_elec_av', 'gwp_elec_dy']].div(df_hsA.ERA, axis=0)], axis=1)

@@ -15,9 +15,9 @@ if __name__ == '__main__':
 
     # Set scenario
     scenario = dict()
-    scenario['Objective'] = 'CCEQL'
+    scenario['Objective'] = 'GWP'
     scenario['name'] = 'totex'
-    scenario['exclude_units'] = ['Battery', 'NG_Cogeneration']
+    scenario['exclude_units'] = []
     scenario['enforce_units'] = []
 
     # Initialize available units and grids
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     units = infrastructure.initialize_units(scenario, grids)
 
     # Set method options
-    method = {'building-scale': True, 'save_lca': True}
+    method = {'building-scale': True}
 
     # Run optimization
     reho = REHO(qbuildings_data=qbuildings_data, units=units, grids=grids, cluster=cluster, scenario=scenario, method=method, solver="gurobi")

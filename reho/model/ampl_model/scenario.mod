@@ -11,7 +11,7 @@ subject to penalties_contraints:
 penalties = sum{h in House} Costs_House_cft[h] +
             penalty_ratio * Costs_grid_connection +
             penalty_ratio * (Costs_op + tau*(Costs_inv + Costs_rep)) +
-            penalty_ratio * (GWP_op + GWP_constr) +
+            penalty_ratio * (GWP_op + GWP_constr + GWP_res) +
             penalty_ratio * sum{l in ResourceBalances,h in HousesOfLayer[l],p in Period,t in Time[p]} (Grid_supply[l,h,p,t] + Grid_demand[l,h,p,t]) +
             penalty_ratio * sum{l in ResourceBalances,p in Period,t in Time[p]} (Network_supply[l,p,t] + Network_demand[l,p,t]);
 
@@ -25,16 +25,94 @@ minimize TOTEX:
 tau*(Costs_inv + Costs_rep) + Costs_op + Costs_grid_connection + penalties;
 
 minimize GWP:
-GWP_op + GWP_constr + penalties;
+GWP_op + GWP_constr + GWP_res + penalties;
  
-minimize land_use:
-lca_tot["land_use"]  + penalties;
+minimize CCEQL:
+lca_tot["CCEQL"] + penalties;
 
-minimize mine_res:
-lca_tot["mine_res"] + penalties;
- 
-minimize Human_toxicity:
-lca_tot["Human_toxicity"] + penalties;
+minimize CCEQS:
+lca_tot["CCEQS"] + penalties;
+
+minimize CCHHL:
+lca_tot["CCHHL"] + penalties;
+
+minimize CCHHS:
+lca_tot["CCHHS"] + penalties;
+
+minimize MAL:
+lca_tot["MAL"] + penalties;
+
+minimize MAS:
+lca_tot["MAS"] + penalties;
+
+minimize PCOX:
+lca_tot["PCOX"] + penalties;
+
+minimize FWEXS:
+lca_tot["FWEXS"] + penalties;
+
+minimize HTXCS:
+lca_tot["HTXCS"] + penalties;
+
+minimize HTXNCS:
+lca_tot["HTXNCS"] + penalties;
+
+minimize FWEXL:
+lca_tot["FWEXL"] + penalties;
+
+minimize HTXCL:
+lca_tot["HTXCL"] + penalties;
+
+minimize HTXNCL:
+lca_tot["HTXNCL"] + penalties;
+
+minimize MEU:
+lca_tot["MEU"] + penalties;
+
+minimize OLD:
+lca_tot["OLD"] + penalties;
+
+minimize FWA:
+lca_tot["FWA"] + penalties;
+
+minimize PMF:
+lca_tot["PMF"] + penalties;
+
+minimize TRA:
+lca_tot["TRA"] + penalties;
+
+minimize FWEU:
+lca_tot["FWEU"] + penalties;
+
+minimize IREQ:
+lca_tot["IREQ"] + penalties;
+
+minimize IRHH:
+lca_tot["IRHH"] + penalties;
+
+minimize LOBDV:
+lca_tot["LOBDV"] + penalties;
+
+minimize LTBDV:
+lca_tot["LTBDV"] + penalties;
+
+minimize TPW:
+lca_tot["TPW"] + penalties;
+
+minimize WAVFWES:
+lca_tot["WAVFWES"] + penalties;
+
+minimize WAVHH:
+lca_tot["WAVHH"] + penalties;
+
+minimize WAVTES:
+lca_tot["WAVTES"] + penalties;
+
+minimize TTHH:
+lca_tot["TTHH"] + penalties;
+
+minimize TTEQ:
+lca_tot["TTEQ"] + penalties;
 
 #--------------------------------------------------------------------------------------------------------------------#
 # Decomposition
@@ -44,7 +122,7 @@ set Obj_fct := Lca_kpi union {'TOTEX', 'OPEX', 'CAPEX', 'GWP'};
 param beta_duals{o in Obj_fct} default 0;
 
 minimize SP_obj_fct:
-beta_duals['OPEX'] * (Costs_op + Costs_grid_connection) + beta_duals['CAPEX'] * tau*(Costs_inv + Costs_rep) + beta_duals['GWP'] * (GWP_op  + GWP_constr) +
+beta_duals['OPEX'] * (Costs_op + Costs_grid_connection) + beta_duals['CAPEX'] * tau*(Costs_inv + Costs_rep) + beta_duals['GWP'] * (GWP_op  + GWP_constr + GWP_res) +
 sum{o in Obj_fct inter Lca_kpi} beta_duals[o] * lca_tot[o] + penalties;
 
 ######################################################################################################################
@@ -80,7 +158,7 @@ subject to EMOO_TOTEX_constraint:
 Costs_op + tau*(Costs_inv +Costs_rep ) + EMOO_slack_totex = EMOO_TOTEX*(sum{h in House} ERA[h]);
 
 subject to EMOO_GWP_constraint:
-GWP_op + GWP_constr + EMOO_slack_gwp = EMOO_GWP*(sum{h in House} ERA[h]);
+GWP_op + GWP_constr + GWP_res + EMOO_slack_gwp = EMOO_GWP*(sum{h in House} ERA[h]);
 
 subject to EMOO_lca_constraint{k in Lca_kpi} :
 lca_tot[k] <= EMOO_lca[k]*(sum{h in House} ERA[h]);

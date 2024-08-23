@@ -120,13 +120,15 @@ def return_BUI_GWPop(df_grid, surface, df_time, df_KPI):
     emissions = df_resource.GWP_supply * df_resource.Grid_supply - df_resource.GWP_demand * df_resource.Grid_demand
     emissions = emissions.mul(df_time.dp, level='Period', axis=0).sum()
 
-    gwp_op_m2 = emissions / surface
+    gwp_res_m2 = emissions / surface
+    gwp_op_m2 = df_KPI["gwp_op_m2"].xs("Network")
     gwp_constr_m2 = df_KPI["gwp_constr_m2"].xs("Network")
-    gwp_tot_m2 = gwp_op_m2 + gwp_constr_m2
+    gwp_tot_m2 = gwp_res_m2 + gwp_constr_m2 * gwp_op_m2
 
     df_aim = {'gwp_elec_av': emissions_el_av,
               'gwp_elec_dy': emissions_el_dy,
               'gwp_op_m2': gwp_op_m2,
+              'gwp_res_m2': gwp_res_m2,
               'gwp_constr_m2': gwp_constr_m2,
               'gwp_tot_m2': gwp_tot_m2}
 
@@ -143,6 +145,7 @@ def correct_data_in_reho(results, OPEX_m2, SS_SC, GWP, GM_GU, surface):
     df_KPI.at["Network", "gwp_elec_av"] = GWP["gwp_elec_av"]
     df_KPI.at["Network", "gwp_elec_dy"] = GWP["gwp_elec_dy"]
     df_KPI.at["Network", "gwp_op_m2"] = GWP["gwp_op_m2"]
+    df_KPI.at["Network", "gwp_res_m2"] = GWP["gwp_res_m2"]
     df_KPI.at["Network", "gwp_constr_m2"] = GWP["gwp_constr_m2"]
     df_KPI.at["Network", "gwp_tot_m2"] = GWP["gwp_tot_m2"]
 
@@ -154,7 +157,7 @@ def correct_data_in_reho(results, OPEX_m2, SS_SC, GWP, GM_GU, surface):
 
     df_perf = results["df_Performance"]
     df_perf.at["Network", "Costs_op"] = OPEX_m2["opex_m2"] * surface
-    df_perf.at["Network", "GWP_op"] = GWP["gwp_op_m2"] * surface
+    df_perf.at["Network", "GWP_res"] = GWP["gwp_res_m2"] * surface
 
     results["df_Annuals"].at[("Electricity", "Network"), "Demand_MWh"] = SS_SC["MWh_exp"]
     results["df_Annuals"].at[("Electricity", "Network"), "Supply_MWh"] = SS_SC["MWh_imp_el"]

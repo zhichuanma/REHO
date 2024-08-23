@@ -238,27 +238,50 @@ param GWP_supply{l in ResourceBalances,p in Period,t in Time[p]} default GWP_sup
 param GWP_demand{l in ResourceBalances,p in Period,t in Time[p]} default GWP_demand_cst[l];											# kgCO2/unit
 param GWP_unit1{u in Units} default 0;
 param GWP_unit2{u in Units} default 0;
+
+var GWP_Unit_op{l in ResourceBalances, u in UnitsOfLayer[l]} >= 0;
 var GWP_house_op{h in House};
-var GWP_op;
+var GWP_op>=0;
+
 var GWP_Unit_constr{u in Units} >= 0;
 var GWP_house_constr{h in House} >=0; 
 var GWP_constr>=0; 
 
-subject to Annual_CO2_operation_house{h in House}: 
-GWP_house_op[h] = sum{l in ResourceBalances,p in PeriodStandard,t in Time[p]} (GWP_supply[l,p,t]*Grid_supply[l,h,p,t]-GWP_demand[l,p,t]*Grid_demand[l,h,p,t]) *dp[p]*dt[p];
+var GWP_house_res{h in House};
+var GWP_res;
 
-subject to Annual_CO2_operation: 
-GWP_op = sum{l in ResourceBalances, p in PeriodStandard,t in Time[p]}(GWP_supply[l,p,t]*Network_supply[l,p,t]-GWP_demand[l,p,t]*Network_demand[l,p,t]) *dp[p]*dt[p];
+#-------------------------#
+#---CONSTRUCTION GWP
+#-------------------------#
+subject to GWP_construction_unit{u in Units}:
+GWP_Unit_constr[u] = Units_Mult[u]*GWP_unit2[u]/lifetime[u];
 
-subject to Annual_CO2_construction_unit{u in Units}:
-GWP_Unit_constr[u] = (Units_Use[u]*GWP_unit1[u] + Units_Mult[u]*GWP_unit2[u])/lifetime[u];
-
-subject to Annual_CO2_construction_house{h in House}:
+subject to GWP_construction_house{h in House}:
 GWP_house_constr[h] = sum{u in UnitsOfHouse[h]}(GWP_Unit_constr[u]);
 
-subject to Annual_CO2_construction:
-GWP_constr = sum{ u in Units} GWP_Unit_constr[u];
+subject to GWP_construction:
+GWP_constr = sum{u in Units} GWP_Unit_constr[u];
 
+#-------------------------#
+#---OPERATION GWP
+#-------------------------#
+subject to GWP_operation_unit{l in ResourceBalances, u in UnitsOfLayer[l]}:
+GWP_Unit_op[l,u] = sum{p in PeriodStandard, t in Time[p]} (GWP_unit1[u] * Units_supply[l,u,p,t]) * dp[p] * dt[p];
+
+subject to GWP_operation_house{h in House}:
+GWP_house_op[h] = sum{l in ResourceBalances, u in UnitsOfHouse[h] inter UnitsOfLayer[l]}(Units_Use[u] * GWP_Unit_op[l,u]);
+
+subject to GWP_operation:
+GWP_op = sum{l in ResourceBalances, u in UnitsOfLayer[l]} GWP_Unit_op[l,u];
+
+#-------------------------#
+#---RESOURCES GWP
+#-------------------------#
+subject to GWP_resources_house{h in House}:
+GWP_house_res[h] = sum{l in ResourceBalances,p in PeriodStandard,t in Time[p]} (GWP_supply[l,p,t]*Grid_supply[l,h,p,t]-GWP_demand[l,p,t]*Grid_demand[l,h,p,t]) *dp[p]*dt[p];
+
+subject to GWP_resources:
+GWP_res = sum{l in ResourceBalances, p in PeriodStandard,t in Time[p]}(GWP_supply[l,p,t]*Network_supply[l,p,t]-GWP_demand[l,p,t]*Network_demand[l,p,t]) *dp[p]*dt[p];
 
 param lca_kpi_1{k in Lca_kpi, u in Units} default 0;
 param lca_kpi_2{k in Lca_kpi, u in Units} default 0;

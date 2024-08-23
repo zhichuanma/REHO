@@ -169,7 +169,7 @@ class REHO(MasterProblem):
 
             def gwp_per_house():
                 df_perf = self.results[Scn_ID][Pareto_ID]["df_Performance"]
-                df_GWP = (df_perf["GWP_op"] + df_perf["GWP_constr"])
+                df_GWP = (df_perf["GWP_op"] + df_perf["GWP_constr"] + df_perf["GWP_res"])
                 GWP_district = df_GWP["Network"] / surfaces.sum()[0]
                 GWP_house = df_GWP.drop("Network").div(surfaces.ERA)
                 return GWP_district, GWP_house
@@ -441,7 +441,7 @@ class REHO(MasterProblem):
         df_Performance = self.get_final_SPs_results(MP_selection, 'df_Performance')
         df_Performance = df_Performance.groupby('Hub').sum()
 
-        for column in ["Costs_op", "Costs_inv", "Costs_cft", "GWP_op", "GWP_constr"]:
+        for column in ["Costs_op", "Costs_inv", "Costs_cft", "GWP_op", "GWP_constr", "GWP_res"]:
             df_Performance.loc[:, column] = last_results["df_District"][column]
         df_Performance.loc['Network', 'ANN_factor'] = df_Performance['ANN_factor'][0]
 

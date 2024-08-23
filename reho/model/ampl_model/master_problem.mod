@@ -139,6 +139,7 @@ Units_Mult[u] <= Units_Use[u]*Units_Fmax[u];
 param Costs_inv_rep_SPs{f in FeasibleSolutions, h in House} >= 0;
 param Costs_ft_SPs{f in FeasibleSolutions, h in House} >= 0;
 param GWP_house_constr_SPs{f in FeasibleSolutions, h in House} >= 0;
+param GWP_house_op_SPs{f in FeasibleSolutions, h in House} >= 0;
 
 #--------------------------------------------------------------------------------------------------------------------#
 #-OPERATIONAL EXPENSES
@@ -209,28 +210,55 @@ param GWP_demand{l in ResourceBalances, p in Period,t in Time[p]} default GWP_de
 
 var GWP_constr>=0;
 var GWP_Unit_constr{u in Units} >= 0;
+var GWP_House_constr{h in House} >=0;
+
 var GWP_op;
-var GWP_House_op{h in House};
-var GWP_House_constr{h in House} >=0; 
+var GWP_Unit_op{l in ResourceBalances, u in UnitsOfLayer[l]} >= 0;
+var GWP_House_op{h in House} >= 0;
+
+var GWP_res;
+var GWP_House_res{h in House};
+
 var GWP_tot;
 
-subject to CO2_construction_unit{u in Units}:
-GWP_Unit_constr[u] = (Units_Use[u]*GWP_unit1[u] + Units_Mult[u]*GWP_unit2[u])/lifetime[u];
+#-------------------------#
+#---CONSTRUCTION GWP
+#-------------------------#
+subject to GWP_construction_unit{u in Units}:
+GWP_Unit_constr[u] = Units_Mult[u]*GWP_unit2[u]/lifetime[u];
 
-subject to CO2_construction_house{h in House}:
+subject to GWP_construction_house{h in House}:
 GWP_House_constr[h] = sum{f in FeasibleSolutions}(lambda[f,h] * GWP_house_constr_SPs[f,h]);
 
-subject to CO2_construction:
+subject to GWP_construction:
 GWP_constr = sum {u in Units} GWP_Unit_constr[u] + sum{h in House} GWP_House_constr[h];
 
-subject to Annual_CO2_operation:
-GWP_op = sum{l in ResourceBalances, p in PeriodStandard, t in Time[p]} (GWP_supply[l,p,t] * Network_supply_GWP[l,p,t] - GWP_demand[l,p,t] * Network_demand_GWP[l,p,t]);
+#-------------------------#
+#---OPERATION GWP
+#-------------------------#
+subject to GWP_operation_unit{l in ResourceBalances, u in UnitsOfLayer[l]}:
+GWP_Unit_op[l,u] = sum{p in PeriodStandard, t in Time[p]} (GWP_unit1[u] * Units_supply[l,u,p,t]) * dp[p] * dt[p];
 
-subject to Annual_CO2_operation_house{h in House}:
-GWP_House_op[h] = sum{f in FeasibleSolutions, l in ResourceBalances, p in PeriodStandard, t in Time[p]} lambda[f,h]*(GWP_supply[l,p,t]*Grid_supply[l,f,h,p,t] - GWP_demand[l,p,t]*Grid_demand[l,f,h,p,t])* dp[p] * dt[p]; 
+subject to GWP_operation_house{h in House}:
+GWP_House_op[h] = sum{f in FeasibleSolutions}(lambda[f,h] * GWP_house_op_SPs[f,h]);
 
-subject to total_GWP: 
-GWP_tot = GWP_constr + GWP_op;
+subject to GWP_operation:
+GWP_op = sum {l in ResourceBalances, u in UnitsOfLayer[l]} GWP_Unit_op[l,u] + sum{h in House} GWP_House_op[h];
+
+#-------------------------#
+#---RESOURCES GWP
+#-------------------------#
+subject to GWP_resource_house{h in House}:
+GWP_House_res[h] = sum{f in FeasibleSolutions, l in ResourceBalances, p in PeriodStandard, t in Time[p]} lambda[f,h]*(GWP_supply[l,p,t]*Grid_supply[l,f,h,p,t] - GWP_demand[l,p,t]*Grid_demand[l,f,h,p,t])* dp[p] * dt[p];
+
+subject to GWP_resource:
+GWP_res = sum{l in ResourceBalances, p in PeriodStandard, t in Time[p]} (GWP_supply[l,p,t] * Network_supply_GWP[l,p,t] - GWP_demand[l,p,t] * Network_demand_GWP[l,p,t]);
+
+#-------------------------#
+#---TOTAL GWP
+#-------------------------#
+subject to total_GWP:
+GWP_tot = GWP_constr + GWP_op + GWP_res;
 
 ######################################################################################################################
 #--------------------------------------------------------------------------------------------------------------------#
@@ -390,8 +418,89 @@ Costs_inv + penalties;
 minimize GWP:
 GWP_tot + penalties;
 
-minimize Human_toxicity:
-lca_tot["Human_toxicity"] + penalties;
+minimize CCEQL:
+lca_tot["CCEQL"] + penalties;
 
-minimize land_use:
-lca_tot["land_use"] + penalties;
+minimize CCEQS:
+lca_tot["CCEQS"] + penalties;
+
+minimize CCHHL:
+lca_tot["CCHHL"] + penalties;
+
+minimize CCHHS:
+lca_tot["CCHHS"] + penalties;
+
+minimize MAL:
+lca_tot["MAL"] + penalties;
+
+minimize MAS:
+lca_tot["MAS"] + penalties;
+
+minimize PCOX:
+lca_tot["PCOX"] + penalties;
+
+minimize FWEXS:
+lca_tot["FWEXS"] + penalties;
+
+minimize HTXCS:
+lca_tot["HTXCS"] + penalties;
+
+minimize HTXNCS:
+lca_tot["HTXNCS"] + penalties;
+
+minimize FWEXL:
+lca_tot["FWEXL"] + penalties;
+
+minimize HTXCL:
+lca_tot["HTXCL"] + penalties;
+
+minimize HTXNCL:
+lca_tot["HTXNCL"] + penalties;
+
+minimize MEU:
+lca_tot["MEU"] + penalties;
+
+minimize OLD:
+lca_tot["OLD"] + penalties;
+
+minimize FWA:
+lca_tot["FWA"] + penalties;
+
+minimize PMF:
+lca_tot["PMF"] + penalties;
+
+minimize TRA:
+lca_tot["TRA"] + penalties;
+
+minimize FWEU:
+lca_tot["FWEU"] + penalties;
+
+minimize IREQ:
+lca_tot["IREQ"] + penalties;
+
+minimize IRHH:
+lca_tot["IRHH"] + penalties;
+
+minimize LOBDV:
+lca_tot["LOBDV"] + penalties;
+
+minimize LTBDV:
+lca_tot["LTBDV"] + penalties;
+
+minimize TPW:
+lca_tot["TPW"] + penalties;
+
+minimize WAVFWES:
+lca_tot["WAVFWES"] + penalties;
+
+minimize WAVHH:
+lca_tot["WAVHH"] + penalties;
+
+minimize WAVTES:
+lca_tot["WAVTES"] + penalties;
+
+minimize TTHH:
+lca_tot["TTHH"] + penalties;
+
+minimize TTEQ:
+lca_tot["TTEQ"] + penalties;

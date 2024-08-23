@@ -34,6 +34,9 @@ def get_df_Results_from_SP(ampl, scenario, method, buildings_data, filter=True):
         df6 = get_ampl_data(ampl, 'GWP_house_constr')
         df6 = df6.rename(columns={'GWP_house_constr': 'GWP_constr'})
 
+        df7 = get_ampl_data(ampl, 'GWP_house_res')
+        df7 = df7.rename(columns={'GWP_house_res': 'GWP_res'})
+
         df71 = get_ampl_data(ampl, 'EMOO_CAPEX')
         df72 = get_ampl_data(ampl, 'EMOO_OPEX')
         df73 = get_ampl_data(ampl, 'EMOO_TOTEX')
@@ -50,9 +53,10 @@ def get_df_Results_from_SP(ampl, scenario, method, buildings_data, filter=True):
         df_N4 = pd.DataFrame({'Costs_ft': [df4.sum()['Costs_ft']]})
         df_N5 = get_ampl_data(ampl, 'GWP_op')
         df_N6 = get_ampl_data(ampl, 'GWP_constr')
+        df_N7 = get_ampl_data(ampl, 'GWP_res')
 
-        df_PerformanceBuilding = pd.concat([df1, df2, df3, df4, df5, df6], axis=1)
-        df_PerformanceNetwork = pd.concat([df_N1, df_N2, df_N3, df_N4, df_N5, df_N6], axis=1)
+        df_PerformanceBuilding = pd.concat([df1, df2, df3, df4, df5, df6, df7], axis=1)
+        df_PerformanceNetwork = pd.concat([df_N1, df_N2, df_N3, df_N4, df_N5, df_N6, df_N7], axis=1)
         df_PerformanceNetwork = df_PerformanceNetwork.rename(index={0: 'Network'})
 
         df_Performance = pd.concat([df_PerformanceBuilding, df_PerformanceNetwork], axis=0)
@@ -431,8 +435,9 @@ def get_df_Results_from_MP(ampl, binary=False, method=None, district=None, read_
     df4.columns = ["Costs_House_tot"]
     df5 = get_ampl_data(ampl, 'GWP_House_op')
     df6 = get_ampl_data(ampl, 'GWP_House_constr')
-    df_House = pd.concat([df1, df2, df3, df4, df5, df6], axis=1)
-    df_House.columns = ["Costs_op", "Costs_inv", "Costs_cft", "Costs_tot", "GWP_op", "GWP_constr"]
+    df10 = get_ampl_data(ampl, 'GWP_House_res')
+    df_House = pd.concat([df1, df2, df3, df4, df5, df6, df10], axis=1)
+    df_House.columns = ["Costs_op", "Costs_inv", "Costs_cft", "Costs_tot", "GWP_op", "GWP_constr", "GWP_res"]
     if read_DHN:
         df7 = get_ampl_data(ampl, 'diameter_max')
         df8 = get_ampl_data(ampl, 'DHN_inv_house')
@@ -446,7 +451,8 @@ def get_df_Results_from_MP(ampl, binary=False, method=None, district=None, read_
     df4 = get_ampl_data(ampl, 'Costs_tot')  # with comfort costs
     df5 = get_ampl_data(ampl, 'GWP_op')
     df6 = get_ampl_data(ampl, 'GWP_constr')
-    df_District = pd.concat([df1, df2, df3, df4, df5, df6], axis=1)
+    df10 = get_ampl_data(ampl, 'GWP_res')
+    df_District = pd.concat([df1, df2, df3, df4, df5, df6, df10], axis=1)
     if read_DHN:
         df7 = np.sqrt(np.sum(df_House[["diameter_max"]] ** 2)).to_frame().transpose()
         df8 = get_ampl_data(ampl, 'DHN_inv')
@@ -460,7 +466,7 @@ def get_df_Results_from_MP(ampl, binary=False, method=None, district=None, read_
     emoo_keys = ["EMOO_CAPEX", "EMOO_OPEX", "EMOO_GWP", "EMOO_TOTEX", "EMOO_lca"]
     list_keys = [i for i in scenario["EMOO"].keys() if i in emoo_keys]
     if not list_keys:
-        df = pd.DataFrame([0.0] * 16)
+        df = pd.DataFrame([0.0] * 33)
         df.index = ['CAPEX', 'OPEX', 'GWP', 'TOTEX'] + list(get_ampl_data(ampl, 'Lca_kpi').index)
         df.columns = ["beta"]
         df_Results["df_beta"] = df
