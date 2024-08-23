@@ -290,22 +290,39 @@ param lca_kpi_demand_cst{k in Lca_kpi, l in ResourceBalances} default 0.0;
 param lca_kpi_supply{k in Lca_kpi, l in ResourceBalances,p in Period,t in Time[p]} default lca_kpi_supply_cst[k,l];
 param lca_kpi_demand{k in Lca_kpi, l in ResourceBalances,p in Period,t in Time[p]} default lca_kpi_demand_cst[k,l];	
 
-var lca_op{k in Lca_kpi, l in ResourceBalances} default 0;
+var lca_op{k in Lca_kpi, u in Units} default 0;
+var lca_res{k in Lca_kpi, l in ResourceBalances} default 0;
 var lca_units{k in Lca_kpi, u in Units} default 0;
+
 var lca_tot{k in Lca_kpi} default 0;
 var lca_tot_house{k in Lca_kpi, h in House} default 0;
 
-subject to LU_op_cst{k in Lca_kpi, l in ResourceBalances}:
-lca_op[k, l] = sum{p in PeriodStandard,t in Time[p]}(lca_kpi_supply[k,l,p,t]*Network_supply[l,p,t] - lca_kpi_demand[k,l,p,t]*Network_demand[l,p,t]) *dp[p]*dt[p];
+#-------------------------#
+#---CONSTRUCTION LCA
+#-------------------------#
+subject to LCA_construction_cst{k in Lca_kpi, u in Units}:
+lca_units[k, u] = Units_Mult[u]*lca_kpi_2[k, u]/lifetime[u];
 
-subject to LU_inv_cst{k in Lca_kpi, u in Units}:
-lca_units[k, u] = (Units_Use[u]*lca_kpi_1[k, u] + Units_Mult[u]*lca_kpi_2[k, u])/lifetime[u];
+#-------------------------#
+#---OPERATION LCA
+#-------------------------#
+subject to LCA_operation_units{k in Lca_kpi, l in ResourceBalances, u in Units inter UnitsOfLayer[l]}:
+lca_op[k,u] = sum{p in PeriodStandard, t in Time[p]} (lca_kpi_1[k,u] * Units_supply[l,u,p,t]) * dp[p] * dt[p];
 
-subject to LU_tot_cst{k in Lca_kpi}:
-lca_tot[k] = sum{u in Units} lca_units[k, u] + sum{l in ResourceBalances} lca_op[k, l];
+#-------------------------#
+#---RESOURCES LCA
+#-------------------------#
+subject to LCA_resources{k in Lca_kpi, l in ResourceBalances}:
+lca_res[k, l] = sum{p in PeriodStandard,t in Time[p]} (lca_kpi_supply[k,l,p,t] * Network_supply[l,p,t] - lca_kpi_demand[k,l,p,t] * Network_demand[l,p,t]) *dp[p]*dt[p];
 
-subject to LU_tot_house_cst{k in Lca_kpi, h in House}:
-lca_tot_house[k, h] = sum{u in UnitsOfHouse[h]} lca_units[k, u] + sum{l in ResourceBalances,p in PeriodStandard,t in Time[p]} (lca_kpi_supply[k,l,p,t]*Grid_supply[l,h,p,t]-lca_kpi_demand[k,l,p,t]*Grid_demand[l,h,p,t]) *dp[p]*dt[p];
+#-------------------------#
+#---TOTAL LCA
+#-------------------------#
+subject to LCA_total{k in Lca_kpi}:
+lca_tot[k] = sum{u in Units} lca_units[k, u] + sum{l in ResourceBalances, u in Units inter UnitsOfLayer[l]} lca_op[k, u] + sum{l in ResourceBalances} lca_res[k, l];
+
+subject to LCA_total_house{k in Lca_kpi, h in House}:
+lca_tot_house[k, h] = sum{u in UnitsOfHouse[h]} lca_units[k, u] + sum{l in ResourceBalances, u in UnitsOfLayer[l] inter UnitsOfHouse[h]} lca_op[k, u] + sum{l in ResourceBalances,p in PeriodStandard,t in Time[p]} (lca_kpi_supply[k,l,p,t]*Grid_supply[l,h,p,t]-lca_kpi_demand[k,l,p,t]*Grid_demand[l,h,p,t]) *dp[p]*dt[p];
 
 ######################################################################################################################
 #--------------------------------------------------------------------------------------------------------------------#

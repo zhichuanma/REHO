@@ -289,7 +289,10 @@ def get_df_Results_from_SP(ampl, scenario, method, buildings_data, filter=True):
         LCA_op = get_ampl_data(ampl, 'lca_op')
         LCA_op = LCA_op.stack().unstack(level=0).droplevel(level=1)
 
-        return LCA_units, LCA_tot, LCA_op
+        LCA_res = get_ampl_data(ampl, 'lca_res')
+        LCA_res = LCA_res.stack().unstack(level=0).droplevel(level=1)
+
+        return LCA_units, LCA_tot, LCA_op, LCA_res
 
     def set_dfs_pv(ampl):
 
@@ -376,7 +379,7 @@ def get_df_Results_from_SP(ampl, scenario, method, buildings_data, filter=True):
         df_Results["df_Streams_t"] = set_df_streams_t(ampl)
 
     if method['save_lca']:
-        df_Results["df_lca_Units"], df_Results["df_lca_Performance"], df_Results["df_lca_operation"] = set_dfs_lca(ampl)
+        df_Results["df_lca_Units"], df_Results["df_lca_Performance"], df_Results["df_lca_operation"], df_Results["df_lca_resource"] = set_dfs_lca(ampl)
 
     if method['use_pv_orientation'] or method['use_facades']:
         df_Results["df_PV_Surface"], df_Results["df_PV_orientation"] = set_dfs_pv(ampl)
@@ -570,6 +573,14 @@ def get_df_Results_from_MP(ampl, binary=False, method=None, district=None, read_
         LCA_units = LCA_units.stack().unstack(level=0).droplevel(level=1)
         df_Results["df_lca_Units"] = LCA_units
 
+        LCA_op = get_ampl_data(ampl, 'lca_op', multi_index=True)
+        LCA_op = LCA_op.stack().unstack(level=0).droplevel(level=1)
+        df_Results["df_lca_operation"] = LCA_op
+
+        LCA_res = get_ampl_data(ampl, 'lca_res', multi_index=True)
+        LCA_res = LCA_res.stack().unstack(level=0).droplevel(level=1)
+        df_Results["df_lca_resource"] = LCA_res
+
         LCA_tot = get_ampl_data(ampl, 'lca_tot')
         LCA_tot = LCA_tot.stack().unstack(level=0)
         LCA_tot.index = ["Network"]
@@ -578,9 +589,7 @@ def get_df_Results_from_MP(ampl, binary=False, method=None, district=None, read_
         df_Results["df_lca_Performance"] = pd.concat([LCA_tot_house, LCA_tot], axis=0)
         df_Results["df_lca_Performance"].index.names = ['Hub']
 
-        LCA_op = get_ampl_data(ampl, 'lca_op', multi_index=True)
-        LCA_op = LCA_op.stack().unstack(level=0).droplevel(level=1)
-        df_Results["df_lca_operation"] = LCA_op
+
 
     if method["actors_problem"]:
         df1 = get_ampl_data(ampl, 'Cost_demand_district', multi_index=True).groupby(level=(0, 2)).sum()

@@ -444,11 +444,18 @@ class MasterProblem:
         if self.method['save_lca']:
             df_lca_Units = self.return_combined_SP_results(self.results_SP, 'df_lca_Units')
             df_lca_Units = df_lca_Units.groupby(level=['Scn_ID', 'Pareto_ID', 'FeasibleSolution', 'house']).sum()
+
+            df_lca_operation = self.return_combined_SP_results(self.results_SP, 'df_lca_operation')
+            df_lca_operation = df_lca_operation.groupby(level=['Scn_ID', 'Pareto_ID', 'FeasibleSolution', 'house']).sum()
+
             MP_parameters['lca_house_units_SPs'] = df_lca_Units.droplevel(["Scn_ID", "Pareto_ID"]).stack().swaplevel(1, 2)
+            MP_parameters['lca_house_operation_SPs'] = df_lca_operation.droplevel(["Scn_ID", "Pareto_ID"]).stack().swaplevel(1, 2)
+
             if not self.method['include_all_solutions']:
                 MP_parameters['lca_house_units_SPs'] = MP_parameters['lca_house_units_SPs'].xs(self.feasible_solutions - 1, level="FeasibleSolution",
                                                                                                drop_level=False)
-
+                MP_parameters['lca_house_operation_SPs'] = MP_parameters['lca_house_operation_SPs'].xs(self.feasible_solutions - 1, level="FeasibleSolution",
+                                                                                                       drop_level=False)
         MP_parameters['Grids_Parameters'] = self.infrastructure.Grids_Parameters
         MP_parameters['Grids_Parameters_lca'] = self.infrastructure.Grids_Parameters_lca
         MP_parameters['Units_flowrate'] = self.infrastructure.Units_flowrate.query('Unit.str.contains("district")')
