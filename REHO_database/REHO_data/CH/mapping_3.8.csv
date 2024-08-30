@@ -1,0 +1,61 @@
+Name,Type,Product,Activity,Location,Unit,Database
+NG_Boiler,Construction,gas boiler,gas boiler production,RER,/unit,ecoinvent_3.8_REHO
+NG_Boiler,Operation,"heat, central or small-scale, natural gas","heat production, natural gas, at boiler modulating <100kW",RoW,/MJ,ecoinvent_3.8_REHO
+OIL_Boiler,Construction,"oil boiler, 10kW","oil boiler production, 10kW",CH,/unit,ecoinvent_3.8_REHO
+OIL_Boiler,Operation,"heat, central or small-scale, other than natural gas","heat production, light fuel oil, at boiler 10kW, non-modulating",CH,/MJ,ecoinvent_3.8_REHO
+WOOD_Stove,Construction,"furnace, wood chips, hardwood storage area, 50kW","furnace production, wood chips, hardwood storage area, 50kW",CH,/unit,ecoinvent_3.8_REHO
+WOOD_Stove,Operation,"heat, central or small-scale, other than natural gas","heat production, wood chips from industry, at furnace 50kW, state-of-the-art 2014",CH,/MJ,ecoinvent_3.8_REHO
+HeatPump_Air,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+HeatPump_Lake,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+HeatPump_Geothermal,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+HeatPump_DHN,Construction,"heat pump, 30kW","heat pump production, 30kW",RER,/unit,ecoinvent_3.8_REHO
+HeatPump_Anergy,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+HeatPump_Air,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+HeatPump_Lake,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+HeatPump_Geothermal,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+HeatPump_DHN,Operation,"heat, central or small-scale, other than natural gas","heat production, at heat pump 30kW, allocation exergy",CH,/MJ,ecoinvent_3.8_REHO
+HeatPump_Anergy,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+Air_Conditioner_Air,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+Air_Conditioner_DHN,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+Air_Conditioner_Air,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+Air_Conditioner_DHN,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+ElectricalHeater_SH,Construction,"auxiliary heating unit, electric, 5kW","auxiliary heating unit production, electric, 5kW",CH,/unit,ecoinvent_3.8_REHO
+ElectricalHeater_DHW,Construction,"auxiliary heating unit, electric, 5kW","auxiliary heating unit production, electric, 5kW",CH,/unit,ecoinvent_3.8_REHO
+ElectricalHeater_SH,Operation,"electricity, low voltage","market for electricity, low voltage",CH,/kWh,ecoinvent_3.8_REHO
+ElectricalHeater_DHW,Operation,"electricity, low voltage","market for electricity, low voltage",CH,/kWh,ecoinvent_3.8_REHO
+PV,Construction,"photovoltaic slanted-roof installation, 3kWp, a-Si, laminated, integrated, on roof","photovoltaic slanted-roof installation, 3kWp, a-Si, laminated, integrated, on roof",CH,/unit,ecoinvent_3.8_REHO
+PV,Operation,"electricity, low voltage","electricity production, photovoltaic, 3kWp slanted-roof installation, a-Si, laminated, integrated",CH,/kWh,ecoinvent_3.8_REHO
+ThermalSolar,Construction,"flat plate solar collector, Cu absorber","flat plate solar collector production, Cu absorber",CH,/m2,ecoinvent_3.8_REHO
+NG_Cogeneration_Heat,Construction,"heat and power co-generation unit, 50kW electrical, components for heat only","heat and power co-generation unit construction, 50kW electrical, components for heat only",RER,/unit,ecoinvent_3.8_REHO
+NG_Cogeneration_Elec,Construction,"heat and power co-generation unit, 50kW electrical, components for electricity only","heat and power co-generation unit construction, 50kW electrical, components for electricity only",RER,/unit,ecoinvent_3.8_REHO
+NG_Cogeneration_CHP,Construction,"heat and power co-generation unit, 50kW electrical, common components for heat+electricity","heat and power co-generation unit construction, 50kW electrical, common components for heat+electricity",RER,/unit,ecoinvent_3.8_REHO
+NG_Cogeneration,Operation,"electricity, low voltage","heat and power co-generation, natural gas, 50kW electrical, lean burn",CH,/kWh,ecoinvent_3.8_REHO
+Battery,Construction,"battery, Li-ion, rechargeable, prismatic","market for battery, Li-ion, rechargeable, prismatic",GLO,/kg,ecoinvent_3.8_REHO
+WaterTankSH,Construction,"hot water tank, 600l","hot water tank production, 600l",CH,/unit,ecoinvent_3.8_REHO
+WaterTankDHW,Construction,"hot water tank, 600l","hot water tank production, 600l",CH,/unit,ecoinvent_3.8_REHO
+Battery_district,Construction,"battery, Li-ion, rechargeable, prismatic","market for battery, Li-ion, rechargeable, prismatic",GLO,/kg,ecoinvent_3.8_REHO
+NG_Cogeneration_district_Elec,Construction,"heat and power co-generation unit, 50kW electrical, components for electricity only","heat and power co-generation unit construction, 50kW electrical, components for electricity only",RER,/unit,ecoinvent_3.8_REHO
+NG_Cogeneration_district_Heat,Construction,"heat and power co-generation unit, 50kW electrical, components for heat only","heat and power co-generation unit construction, 50kW electrical, components for heat only",RER,/unit,ecoinvent_3.8_REHO
+NG_Cogeneration_district_CHP,Construction,"heat and power co-generation unit, 50kW electrical, common components for heat+electricity","heat and power co-generation unit construction, 50kW electrical, common components for heat+electricity",RER,/unit,ecoinvent_3.8_REHO
+NG_Cogeneration_district,Operation,"electricity, low voltage","heat and power co-generation, natural gas, 50kW electrical, lean burn",CH,/kWh,ecoinvent_3.8_REHO
+HeatPump_Geothermal_district,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+HeatPump_Geothermal_district,Operation,"heat, air-water heat pump 10kW","heat production, air-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
+NG_Boiler_district,Construction,gas boiler,gas boiler production,RER,/unit,ecoinvent_3.8_REHO
+NG_Boiler_district,Operation,"heat, central or small-scale, natural gas","heat production, natural gas, at boiler modulating <100kW",RoW,/MJ,ecoinvent_3.8_REHO
+NaturalGas,Resource,"natural gas, low pressure","market for natural gas, low pressure",CH,/m3,ecoinvent_3.8_REHO
+Oil,Resource,light fuel oil,market for light fuel oil,CH,/kg,ecoinvent_3.8_REHO
+Wood,Resource,"wood chips, dry, measured as dry mass","market for wood chips, dry, measured as dry mass",RER,/kg,ecoinvent_3.8_REHO
+Hydrogen,Resource,"hydrogen, gaseous","market for hydrogen, gaseous",GLO,/kg,ecoinvent_3.8_REHO
+Biogas,Resource,biogas,market for biogas,CH,/m3,ecoinvent_3.8_REHO
+Heat,Resource,"heat, future","market for heat, future",GLO,/MJ,ecoinvent_3.8_REHO
+Electricity,Resource,"electricity, low voltage","market for electricity, low voltage",CH,/kWh,ecoinvent_3.8_REHO
+Water,Resource,tap water,market for tap water,CH,/kg,ecoinvent_3.8_REHO
+NaturalGas,Flow,"natural gas, low pressure","market for natural gas, low pressure",CH,/m3,ecoinvent_3.8_REHO
+Oil,Flow,light fuel oil,market for light fuel oil,CH,/kg,ecoinvent_3.8_REHO
+Wood,Flow,"wood chips, dry, measured as dry mass","market for wood chips, dry, measured as dry mass",RER,/kg,ecoinvent_3.8_REHO
+Hydrogen,Flow,"hydrogen, gaseous","market for hydrogen, gaseous",GLO,/kg,ecoinvent_3.8_REHO
+Biogas,Flow,biogas,market for biogas,CH,/m3,ecoinvent_3.8_REHO
+Heat,Flow,"heat, future","market for heat, future",GLO,/MJ,ecoinvent_3.8_REHO
+Electricity,Flow,"electricity, low voltage","market for electricity, low voltage",CH,/kWh,ecoinvent_3.8_REHO
+Water,Flow,tap water,market for tap water,CH,/kg,ecoinvent_3.8_REHO
+Ambient_Heat,Flow,"heat, future","market for heat, future",GLO,/MJ,ecoinvent_3.8_REHO

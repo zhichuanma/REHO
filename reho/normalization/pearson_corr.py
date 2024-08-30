@@ -8,7 +8,7 @@ correlation_matrix = df.corr(method='pearson')
 correlation_matrix.to_csv('correlation_matrix.csv', index=False)
 print(correlation_matrix)
 
-threshold = -0.9
+threshold = 0
 
 negative_relationships = {}
 

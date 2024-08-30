@@ -8,14 +8,14 @@ if __name__ == '__main__':
     # Set building parameters
     # Load your buildings from a csv file instead of reading the database
     reader = QBuildingsReader()
-    qbuildings_data = reader.read_csv(buildings_filename=buildings_filename, nb_buildings=2)
+    qbuildings_data = reader.read_csv(buildings_filename=buildings_filename, nb_buildings=1)
 
     # Select clustering options for weather data
     cluster = {'Location': 'Sion', 'Attributes': ['T', 'I', 'W'], 'Periods': 10, 'PeriodDuration': 24}
 
     # Set scenario
     scenario = dict()
-    scenario['Objective'] = 'CCEQL'
+    scenario['Objective'] = 'MEU'
     scenario['name'] = 'totex'
     scenario['exclude_units'] = []
     scenario['enforce_units'] = []

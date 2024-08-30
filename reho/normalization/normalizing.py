@@ -19,9 +19,10 @@ if __name__ == '__main__':
 
     # DataFrame to store X_min and X_max for each indicator
     df_results = pd.DataFrame(index=INDICATORS, columns=INDICATORS)
+    df_X_max_X_min = pd.DataFrame(index=['X_min', 'X_max'], columns=INDICATORS)
 
     for opt_indicator in INDICATORS:
-        # Set scenario
+
         scenario = {
                 'Objective': opt_indicator,
                 'name': 'normalization',
@@ -53,8 +54,15 @@ if __name__ == '__main__':
             df_results.loc[opt_indicator, indicator] = reho.results['normalization'][0]['df_lca_Performance'].loc['Network', indicator]
 
     # Print the results DataFrame
-    print(df_results)
-
+    df_X_max_X_min.loc['X_max'] = df_results.max()
+    df_X_max_X_min.loc['X_min'] = df_results.min()
     # Save the results to a CSV file
     df_results.to_csv('results_normalized.csv')
+    df_X_max_X_min.to_csv('X_max_X_min.csv')
 
+    df_building_units = pd.read_csv(
+        r'C:\Users\Administrator\PycharmProjects\REHO\reho\data\infrastructure\building_units.csv')
+    df_district_units = pd.read_csv(
+        r'C:\Users\Administrator\PycharmProjects\REHO\reho\data\infrastructure\district_units.csv')
+    df_grids = pd.read_csv(
+        r'C:\Users\Administrator\PycharmProjects\REHO\reho\data\infrastructure\grids.csv')

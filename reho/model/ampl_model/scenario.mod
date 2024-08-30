@@ -28,91 +28,91 @@ minimize GWP:
 GWP_op + GWP_constr + GWP_res + penalties;
  
 minimize CCEQL:
-lca_tot["CCEQL"] + penalties;
+lca_tot["CCEQL"];
 
 minimize CCEQS:
-lca_tot["CCEQS"] + penalties;
+lca_tot["CCEQS"];
 
 minimize CCHHL:
-lca_tot["CCHHL"] + penalties;
+lca_tot["CCHHL"];
 
 minimize CCHHS:
-lca_tot["CCHHS"] + penalties;
+lca_tot["CCHHS"];
 
 minimize MAL:
-lca_tot["MAL"] + penalties;
+lca_tot["MAL"];
 
 minimize MAS:
-lca_tot["MAS"] + penalties;
+lca_tot["MAS"];
 
 minimize PCOX:
-lca_tot["PCOX"] + penalties;
+lca_tot["PCOX"];
 
 minimize FWEXS:
-lca_tot["FWEXS"] + penalties;
+lca_tot["FWEXS"];
 
 minimize HTXCS:
-lca_tot["HTXCS"] + penalties;
+lca_tot["HTXCS"];
 
 minimize HTXNCS:
-lca_tot["HTXNCS"] + penalties;
+lca_tot["HTXNCS"];
 
 minimize FWEXL:
-lca_tot["FWEXL"] + penalties;
+lca_tot["FWEXL"];
 
 minimize HTXCL:
-lca_tot["HTXCL"] + penalties;
+lca_tot["HTXCL"];
 
 minimize HTXNCL:
-lca_tot["HTXNCL"] + penalties;
+lca_tot["HTXNCL"];
 
 minimize MEU:
-lca_tot["MEU"] + penalties;
+lca_tot["MEU"];
 
 minimize OLD:
-lca_tot["OLD"] + penalties;
+lca_tot["OLD"];
 
 minimize FWA:
-lca_tot["FWA"] + penalties;
+lca_tot["FWA"];
 
 minimize PMF:
-lca_tot["PMF"] + penalties;
+lca_tot["PMF"];
 
 minimize TRA:
-lca_tot["TRA"] + penalties;
+lca_tot["TRA"];
 
 minimize FWEU:
-lca_tot["FWEU"] + penalties;
+lca_tot["FWEU"];
 
 minimize IREQ:
-lca_tot["IREQ"] + penalties;
+lca_tot["IREQ"];
 
 minimize IRHH:
-lca_tot["IRHH"] + penalties;
+lca_tot["IRHH"];
 
 minimize LOBDV:
-lca_tot["LOBDV"] + penalties;
+lca_tot["LOBDV"];
 
 minimize LTBDV:
-lca_tot["LTBDV"] + penalties;
+lca_tot["LTBDV"];
 
 minimize TPW:
-lca_tot["TPW"] + penalties;
+lca_tot["TPW"];
 
 minimize WAVFWES:
-lca_tot["WAVFWES"] + penalties;
+lca_tot["WAVFWES"];
 
 minimize WAVHH:
-lca_tot["WAVHH"] + penalties;
+lca_tot["WAVHH"];
 
 minimize WAVTES:
-lca_tot["WAVTES"] + penalties;
+lca_tot["WAVTES"];
 
 minimize TTHH:
-lca_tot["TTHH"] + penalties;
+lca_tot["TTHH"];
 
 minimize TTEQ:
-lca_tot["TTEQ"] + penalties;
+lca_tot["TTEQ"];
 
 #--------------------------------------------------------------------------------------------------------------------#
 # Decomposition

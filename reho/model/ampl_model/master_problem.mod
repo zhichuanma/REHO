@@ -37,7 +37,7 @@ param n_years default 20;                                           #yr
 param i_rate default 0.02;                                          #-
 param tau := i_rate*(1+i_rate)^n_years/(((1+i_rate)^n_years)-1);    #-
 
-# set UnitsofHouse{f in FeasibleSolutions, h in House}
+#set UnitsofHouse{f in FeasibleSolutions, h in House}
 
 
 ######################################################################################################################
@@ -202,14 +202,11 @@ subject to Costs_Unit_capex{u in Units} :
 subject to Costs_Unit_replacement:
 Costs_rep= tau* sum{u in Units,n_rep in 1..(n_years/lifetime[u])-1 by 1}( (1/(1 + i_rate))^(n_rep*lifetime[u])*Costs_Unit_inv[u] );
 
-
 subject to Costs_House_capex{h in House}:
 Costs_House_inv[h] =sum{f in FeasibleSolutions} lambda[f,h] * Costs_inv_rep_SPs[f,h] + DHN_inv_house[h];
 
-
 subject to Costs_capex:
 Costs_inv = tau* sum{u in Units} Costs_Unit_inv[u] + Costs_rep + sum{h in House} Costs_House_inv[h];
-
 
 subject to cft_costs_house{h in House}:
 Costs_House_cft[h] = sum{f in FeasibleSolutions} (lambda[f,h] * Costs_ft_SPs[f,h]);
@@ -220,12 +217,9 @@ Costs_cft = sum{h in House} Costs_House_cft[h];
 subject to total_costs:
 Costs_tot = Costs_op + Costs_inv;
 
-
-
 #--------------------------------------------------------------------------------------------------------------------#
-#---REHO (original)
+#-Lifecycle assessment
 #--------------------------------------------------------------------------------------------------------------------#
-
 #-PARAMETERS
 param GWP_unit1{u in Units} default 0;
 param GWP_unit2{u in Units} default 0;
@@ -248,22 +242,9 @@ var GWP_House_res{h in House};
 
 var GWP_tot;
 
-# subject to CO2_construction_unit{u in Units}:
-# GWP_Unit_constr[u] = (Units_Use[u]*GWP_unit1[u] + Units_Mult[u]*GWP_unit2[u])/lifetime[u];
-
-# subject to CO2_construction_house{h in House}:
-# GWP_House_constr[h] = sum{f in FeasibleSolutions}(lambda[f,h] * GWP_house_constr_SPs[f,h]);
-
-# subject to CO2_construction:
-# GWP_constr = sum {u in Units} GWP_Unit_constr[u] + sum{h in House} GWP_House_constr[h];
-#--------------------------------------------------------------------------------------------------------------------#
-#---Energyscope (new)
-#--------------------------------------------------------------------------------------------------------------------#
-
 #-------------------------#
 #---CONSTRUCTION GWP
 #-------------------------#
-
 subject to GWP_construction_unit{u in Units}:
 GWP_Unit_constr[u] = Units_Mult[u]*GWP_unit2[u]/lifetime[u];
 
@@ -276,7 +257,6 @@ GWP_constr = sum {u in Units} GWP_Unit_constr[u] + sum{h in House} GWP_House_con
 #-------------------------#
 #---OPERATION GWP
 #-------------------------#
-
 subject to GWP_operation_unit{l in ResourceBalances, u in UnitsOfLayer[l]}:
 GWP_Unit_op[l,u] = sum{p in PeriodStandard, t in Time[p]} (GWP_unit1[u] * Units_supply[l,u,p,t]) * dp[p] * dt[p];
 
@@ -289,7 +269,6 @@ GWP_op = sum {l in ResourceBalances, u in UnitsOfLayer[l]} GWP_Unit_op[l,u] + su
 #-------------------------#
 #---RESOURCES GWP
 #-------------------------#
-
 subject to GWP_resource_house{h in House}:
 GWP_House_res[h] = sum{f in FeasibleSolutions, l in ResourceBalances, p in PeriodStandard, t in Time[p]} lambda[f,h]*(GWP_supply[l,p,t]*Grid_supply[l,f,h,p,t] - GWP_demand[l,p,t]*Grid_demand[l,f,h,p,t])* dp[p] * dt[p];
 
@@ -299,7 +278,6 @@ GWP_res = sum{l in ResourceBalances, p in PeriodStandard, t in Time[p]} (GWP_sup
 #-------------------------#
 #---TOTAL GWP
 #-------------------------#
-
 subject to total_GWP:
 GWP_tot = GWP_constr + GWP_op + GWP_res;
 
@@ -334,14 +312,9 @@ var lca_tot_house{k in Lca_kpi, h in House} default 0;
 subject to complicating_cst_lca{k in Lca_kpi, l in ResourceBalances, p in Period, t in Time[p]}:
 Network_supply_lca[k,l,p,t] - Network_demand_lca[k,l,p,t] = ( sum{f in FeasibleSolutions, h in House}(lambda[f,h] *(Grid_supply[l,f,h,p,t]-Grid_demand[l,f,h,p,t])) +sum {r in Units} Units_demand[l,r,p,t]-sum {b in Units} Units_supply[l,b,p,t])* dp[p] * dt[p];
 
-#--------------------------------------------------------------------------------------------------------------------#
-#---Energyscope (new)
-#--------------------------------------------------------------------------------------------------------------------#
-
 #-------------------------#
 #---CONSTRUCTION LCA
 #-------------------------#
-
 subject to LCA_construction_cst{k in Lca_kpi, u in Units}:
 lca_units[k, u] = Units_Mult[u]*lca_kpi_2[k, u]/lifetime[u];
 
@@ -354,7 +327,6 @@ lca_constr[k] = sum {u in Units} lca_units[k, u] + sum{h in House} lca_house_uni
 #-------------------------#
 #---OPERATION LCA
 #-------------------------#
-
 subject to LCA_operation_house{k in Lca_kpi, h in House}:
 lca_house_op[k, h] = sum{f in FeasibleSolutions}(lambda[f,h] * lca_house_operation_SPs[f,k,h]);
 
@@ -496,88 +468,88 @@ minimize GWP:
 GWP_tot + penalties;
 
 minimize CCEQL:
-lca_tot["CCEQL"] + penalties;
+lca_tot["CCEQL"];
 
 minimize CCEQS:
-lca_tot["CCEQS"] + penalties;
+lca_tot["CCEQS"];
 
 minimize CCHHL:
-lca_tot["CCHHL"] + penalties;
+lca_tot["CCHHL"];
 
 minimize CCHHS:
-lca_tot["CCHHS"] + penalties;
+lca_tot["CCHHS"];
 
 minimize MAL:
-lca_tot["MAL"] + penalties;
+lca_tot["MAL"];
 
 minimize MAS:
-lca_tot["MAS"] + penalties;
+lca_tot["MAS"];
 
 minimize PCOX:
-lca_tot["PCOX"] + penalties;
+lca_tot["PCOX"];
 
 minimize FWEXS:
-lca_tot["FWEXS"] + penalties;
+lca_tot["FWEXS"];
 
 minimize HTXCS:
-lca_tot["HTXCS"] + penalties;
+lca_tot["HTXCS"];
 
 minimize HTXNCS:
-lca_tot["HTXNCS"] + penalties;
+lca_tot["HTXNCS"];
 
 minimize FWEXL:
-lca_tot["FWEXL"] + penalties;
+lca_tot["FWEXL"];
 
 minimize HTXCL:
-lca_tot["HTXCL"] + penalties;
+lca_tot["HTXCL"];
 
 minimize HTXNCL:
-lca_tot["HTXNCL"] + penalties;
+lca_tot["HTXNCL"];
 
 minimize MEU:
-lca_tot["MEU"] + penalties;
+lca_tot["MEU"];
 
 minimize OLD:
-lca_tot["OLD"] + penalties;
+lca_tot["OLD"];
 
 minimize FWA:
-lca_tot["FWA"] + penalties;
+lca_tot["FWA"];
 
 minimize PMF:
-lca_tot["PMF"] + penalties;
+lca_tot["PMF"];
 
 minimize TRA:
-lca_tot["TRA"] + penalties;
+lca_tot["TRA"];
 
 minimize FWEU:
-lca_tot["FWEU"] + penalties;
+lca_tot["FWEU"];
 
 minimize IREQ:
-lca_tot["IREQ"] + penalties;
+lca_tot["IREQ"];
 
 minimize IRHH:
-lca_tot["IRHH"] + penalties;
+lca_tot["IRHH"];
 
 minimize LOBDV:
-lca_tot["LOBDV"] + penalties;
+lca_tot["LOBDV"];
 
 minimize LTBDV:
-lca_tot["LTBDV"] + penalties;
+lca_tot["LTBDV"];
 
 minimize TPW:
-lca_tot["TPW"] + penalties;
+lca_tot["TPW"];
 
 minimize WAVFWES:
-lca_tot["WAVFWES"] + penalties;
+lca_tot["WAVFWES"];
 
 minimize WAVHH:
-lca_tot["WAVHH"] + penalties;
+lca_tot["WAVHH"];
 
 minimize WAVTES:
-lca_tot["WAVTES"] + penalties;
+lca_tot["WAVTES"];
 
 minimize TTHH:
-lca_tot["TTHH"] + penalties;
+lca_tot["TTHH"];
 
 minimize TTEQ:
-lca_tot["TTEQ"] + penalties;
+lca_tot["TTEQ"];
