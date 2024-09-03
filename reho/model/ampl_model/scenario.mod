@@ -27,92 +27,42 @@ tau*(Costs_inv + Costs_rep) + Costs_op + Costs_grid_connection + penalties;
 minimize GWP:
 GWP_op + GWP_constr + GWP_res + penalties;
  
-minimize CCEQL:
-lca_tot["CCEQL"];
+minimize land_use:
+    lca_tot["land_use"] + penalties;
 
-minimize CCEQS:
-lca_tot["CCEQS"];
+minimize mine_res:
+    lca_tot["mine_res"] + penalties;
 
-minimize CCHHL:
-lca_tot["CCHHL"];
+minimize water_res:
+    lca_tot["water_res"] + penalties;
 
-minimize CCHHS:
-lca_tot["CCHHS"];
+minimize energy_res:
+    lca_tot["energy_res"] + penalties;
 
-minimize MAL:
-lca_tot["MAL"];
+minimize Human_toxicity:
+    lca_tot["Human_toxicity"] + penalties;
 
-minimize MAS:
-lca_tot["MAS"];
+minimize water_pollutants:
+    lca_tot["water_pollutants"] + penalties;
 
-minimize PCOX:
-lca_tot["PCOX"];
+minimize metals_water:
+    lca_tot["metals_water"] + penalties;
 
-minimize FWEXS:
-lca_tot["FWEXS"];
+minimize pop_water:
+    lca_tot["pop_water"] + penalties;
 
-minimize HTXCS:
-lca_tot["HTXCS"];
+minimize metals_soil:
+    lca_tot["metals_soil"] + penalties;
 
-minimize HTXNCS:
-lca_tot["HTXNCS"];
+minimize pollutants_pm:
+    lca_tot["pollutants_pm"] + penalties;
 
-minimize FWEXL:
-lca_tot["FWEXL"];
+minimize Metal_air:
+    lca_tot["Metal_air"] + penalties;
 
-minimize HTXCL:
-lca_tot["HTXCL"];
+minimize ozone_depletion:
+    lca_tot["ozone_depletion"] + penalties;
 
-minimize HTXNCL:
-lca_tot["HTXNCL"];
-
-minimize MEU:
-lca_tot["MEU"];
-
-minimize OLD:
-lca_tot["OLD"];
-
-minimize FWA:
-lca_tot["FWA"];
-
-minimize PMF:
-lca_tot["PMF"];
-
-minimize TRA:
-lca_tot["TRA"];
-
-minimize FWEU:
-lca_tot["FWEU"];
-
-minimize IREQ:
-lca_tot["IREQ"];
-
-minimize IRHH:
-lca_tot["IRHH"];
-
-minimize LOBDV:
-lca_tot["LOBDV"];
-
-minimize LTBDV:
-lca_tot["LTBDV"];
-
-minimize TPW:
-lca_tot["TPW"];
-
-minimize WAVFWES:
-lca_tot["WAVFWES"];
-
-minimize WAVHH:
-lca_tot["WAVHH"];
-
-minimize WAVTES:
-lca_tot["WAVTES"];
-
-minimize TTHH:
-lca_tot["TTHH"];
-
-minimize TTEQ:
-lca_tot["TTEQ"];
 
 #--------------------------------------------------------------------------------------------------------------------#
 # Decomposition
