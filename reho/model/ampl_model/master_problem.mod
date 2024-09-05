@@ -234,8 +234,8 @@ var GWP_Unit_constr{u in Units} >= 0;
 var GWP_House_constr{h in House} >= 0;
 
 var GWP_op;
-var GWP_Unit_op{l in ResourceBalances, u in UnitsOfLayer[l]} >= 0;
-var GWP_House_op{h in House} >= 0;
+var GWP_Unit_op{l in ResourceBalances, u in UnitsOfLayer[l]} default 0;
+var GWP_House_op{h in House} default 0;
 
 var GWP_res;
 var GWP_House_res{h in House};
@@ -500,3 +500,90 @@ minimize Metal_air:
 
 minimize ozone_depletion:
     lca_tot["ozone_depletion"] + penalties;
+
+minimize CCEQL:
+    lca_tot["CCEQL"];
+
+minimize CCEQS:
+    lca_tot["CCEQS"];
+
+minimize CCHHL:
+    lca_tot["CCHHL"];
+
+minimize CCHHS:
+    lca_tot["CCHHS"];
+
+minimize MAL:
+    lca_tot["MAL"];
+
+minimize MAS:
+    lca_tot["MAS"];
+
+minimize PCOX:
+    lca_tot["PCOX"];
+
+minimize FWEXS:
+    lca_tot["FWEXS"];
+
+minimize HTXCS:
+    lca_tot["HTXCS"];
+
+minimize HTXNCS:
+    lca_tot["HTXNCS"];
+
+minimize FWEXL:
+    lca_tot["FWEXL"];
+
+minimize HTXCL:
+    lca_tot["HTXCL"];
+
+minimize HTXNCL:
+    lca_tot["HTXNCL"];
+
+minimize MEU:
+    lca_tot["MEU"];
+
+minimize OLD:
+    lca_tot["OLD"];
+
+minimize FWA:
+    lca_tot["FWA"];
+
+minimize PMF:
+    lca_tot["PMF"];
+
+minimize TRA:
+    lca_tot["TRA"];
+
+minimize FWEU:
+    lca_tot["FWEU"];
+
+minimize IREQ:
+    lca_tot["IREQ"];
+
+minimize IRHH:
+    lca_tot["IRHH"];
+
+minimize LOBDV:
+    lca_tot["LOBDV"];
+
+minimize LTBDV:
+    lca_tot["LTBDV"];
+
+minimize TPW:
+    lca_tot["TPW"];
+
+minimize WAVFWES:
+    lca_tot["WAVFWES"];
+
+minimize WAVHH:
+    lca_tot["WAVHH"];
+
+minimize WAVTES:
+    lca_tot["WAVTES"];
+
+minimize TTHH:
+    lca_tot["TTHH"];
+
+minimize TTEQ:
+    lca_tot["TTEQ"];

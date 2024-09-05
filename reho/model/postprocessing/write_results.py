@@ -469,7 +469,7 @@ def get_df_Results_from_MP(ampl, binary=False, method=None, district=None, read_
     emoo_keys = ["EMOO_CAPEX", "EMOO_OPEX", "EMOO_GWP", "EMOO_TOTEX", "EMOO_lca"]
     list_keys = [i for i in scenario["EMOO"].keys() if i in emoo_keys]
     if not list_keys:
-        df = pd.DataFrame([0.0] * 16)
+        df = pd.DataFrame([0.0] * 33)
         df.index = ['CAPEX', 'OPEX', 'GWP', 'TOTEX'] + list(get_ampl_data(ampl, 'Lca_kpi').index)
         df.columns = ["beta"]
         df_Results["df_beta"] = df

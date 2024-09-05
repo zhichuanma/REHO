@@ -239,13 +239,13 @@ param GWP_demand{l in ResourceBalances,p in Period,t in Time[p]} default GWP_dem
 param GWP_unit1{u in Units} default 0;
 param GWP_unit2{u in Units} default 0;
 
-var GWP_Unit_op{l in ResourceBalances, u in UnitsOfLayer[l]} >= 0;
+var GWP_Unit_op{l in ResourceBalances, u in UnitsOfLayer[l]} default 0;
 var GWP_house_op{h in House};
-var GWP_op>=0;
+var GWP_op default 0;
 
-var GWP_Unit_constr{u in Units} >= 0;
-var GWP_house_constr{h in House} >=0; 
-var GWP_constr>=0; 
+var GWP_Unit_constr{u in Units} default 0;
+var GWP_house_constr{h in House} default 0;
+var GWP_constr default 0;
 
 var GWP_house_res{h in House};
 var GWP_res;

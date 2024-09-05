@@ -13,6 +13,32 @@ if __name__ == '__main__':
     # Select clustering options for weather data
     cluster = {'Location': 'Sion', 'Attributes': ['T', 'I', 'W'], 'Periods': 10, 'PeriodDuration': 24}
 
+    energy_systems = [
+        "NG_Boiler",
+        "OIL_Boiler",
+        "WOOD_Stove",
+        "HeatPump_Air",
+        "HeatPump_Lake",
+        "HeatPump_Geothermal",
+        "HeatPump_DHN",
+        "HeatPump_Anergy",
+        "Air_Conditioner_Air",
+        "Air_Conditioner_DHN",
+        "ElectricalHeater_SH",
+        "ElectricalHeater_DHW",
+        "PV",
+        "ThermalSolar",
+        "NG_Cogeneration",
+        "Battery",
+        "WaterTankSH",
+        "WaterTankDHW",
+        "DataHeat_SH",
+        "DataHeat_DHW",
+        "DHN_hex_in",
+        "DHN_hex_out",
+        "DHN_pipes"
+    ]
+
     # Set scenario
     scenario = dict()
     scenario['Objective'] = 'GWP'
@@ -33,3 +59,9 @@ if __name__ == '__main__':
 
     # Save results
     reho.save_results(format=['xlsx', 'pickle'], filename='2a')
+
+    from reho.plotting import plotting
+    import pandas as pd
+
+    results = pd.read_pickle(r'C:\Users\Administrator\PycharmProjects\REHO\scripts\examples\results\2a.pickle')
+    plotting.plot_sankey(results['totex'][0], label='EN_long', color='ColorPastel').show()
