@@ -41,10 +41,10 @@ if __name__ == '__main__':
 
     # Set scenario
     scenario = dict()
-    scenario['Objective'] = 'GWP'
+    scenario['Objective'] = 'MAL'
     scenario['name'] = 'totex'
     scenario['exclude_units'] = []
-    scenario['enforce_units'] = []
+    scenario['enforce_units'] = ['PV', 'NG_Boiler']
 
     # Initialize available units and grids
     grids = infrastructure.initialize_grids()
