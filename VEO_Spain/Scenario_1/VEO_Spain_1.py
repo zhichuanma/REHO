@@ -14,8 +14,8 @@ if __name__ == '__main__':
 
     # Set scenario
     scenario = dict()
-    scenario['Objective'] = 'TOTEX'
-    scenario['name'] = 'totex'
+    scenario['Objective'] = 'CCEQL'
+    scenario['name'] = 'CCEQL'
     scenario['exclude_units'] = ['WOOD_Stove', 'NG_Cogeneration']
     scenario['enforce_units'] = []
     scenario["specific"] = ["enforce_DHN"]
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     # reho.get_DHN_costs()  # run one optimization forcing DHN to find costs DHN connection per house
     reho.single_optimization()  # run optimization with DHN costs
 
-    unfixed_file = reho.results['totex'][0]['df_Unit']
+    unfixed_file = reho.results['CCEQL'][0]['df_Unit']
     unfixed_file.to_csv('./units_files/unfixed.csv')
 
     df = pd.read_csv('./units_files/modified.csv', index_col = 0)
@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
     reho.fix_units_list=['HeatPump_Air', 'HeatPump_Geothermal', 'NG_Boiler', 'OIL_Boiler', 'ThermalSolar', 'PV']
 
-    reho.scenario['Objective'] = 'TOTEX'
+    reho.scenario['Objective'] = 'CCEQL'
     reho.scenario['name'] = 'fixed'
     reho.method['fix_units'] = True  # select the method fixing the unit sizes
 

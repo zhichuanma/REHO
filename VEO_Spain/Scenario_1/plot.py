@@ -2,7 +2,7 @@ from reho.plotting import plotting
 import pandas as pd
 
 
-results = pd.read_pickle(r'C:\Users\Administrator\PycharmProjects\REHO_v4\VEO_Spain\Scenario_1\results\fix.pickle')
+results = pd.read_pickle(r'C:\Users\Administrator\PycharmProjects\REHO\VEO_Spain\Scenario_1\results\fix.pickle')
 
 # Performance plot : Costs, Global Warming Potential, and Social Costs including Carbon Impact
 plotting.plot_performance(results, plot='costs', indexed_on='Scn_ID', filename="figures/performance_costs").show()
@@ -20,4 +20,4 @@ plotting.plot_sunburst_eud(results, label='EN_long').show()
 
 # Hourly profiles
 units_to_plot = ['ElectricalHeater', 'HeatPump', 'PV', 'NG_Boiler']
-plotting.plot_profiles(results['totex'][0], units_to_plot, label='EN_long', color='ColorPastel', resolution='weekly').show()
+plotting.plot_profiles(results['CCEQL'][0], units_to_plot, label='EN_long', color='ColorPastel', resolution='weekly').show()
