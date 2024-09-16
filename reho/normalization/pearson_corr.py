@@ -1,4 +1,7 @@
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
 
 df = pd.read_csv('results_normalized.csv')
 
@@ -8,26 +11,23 @@ correlation_matrix = df.corr(method='pearson')
 correlation_matrix.to_csv('correlation_matrix.csv', index=False)
 print(correlation_matrix)
 
-threshold = 0
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=False, cmap="coolwarm", vmin=-1, vmax=1)
+plt.title("Heatmap of Correlation Matrix")
+plt.show()
 
-negative_relationships = {}
+# K means cluster
 
-# Iterate over each row of the correlation matrix using iterrows()
-for indicator, row in correlation_matrix.iterrows():
-    # Find all labels (column names) with a correlation below the threshold in the current row
-    negatives = row[row < threshold].index.tolist()
-    negative_relationships[indicator] = negatives
+kmeans = KMeans(n_clusters=3, random_state=0)
+clusters = kmeans.fit_predict(correlation_matrix)
 
-# Convert the dictionary to a DataFrame
-negative_relationships_df = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in negative_relationships.items()]))
+df_clusters = pd.DataFrame({
+    'Index': range(1, len(clusters) + 1),
+    'Indicator': correlation_matrix.columns,
+    'Cluster': clusters
+})
 
-# Display the DataFrame
-print(negative_relationships_df)
-
-csv_file_path = 'negative_relationships_df.csv'
-negative_relationships_df.to_csv(csv_file_path, index=False)
-
-# Convert the dictionary to a DataFrame for better visualization
-print(negative_relationships)
-
-
+# Select one indicator from each cluster
+representative_indicators = df_clusters.groupby('Cluster')['Indicator'].first()
+print("Selected representative indicators from each cluster:")
+print(representative_indicators)
