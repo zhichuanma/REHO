@@ -8,14 +8,14 @@ if __name__ == '__main__':
     # Load your buildings from a csv file instead of reading the database
     reader = QBuildingsReader()
     qbuildings_data = reader.read_csv(buildings_filename='VEO_Spain.csv', nb_buildings=3)
-
+    Obejctive = 'GWP'
     # Select clustering options for weather data
     cluster = {'Location': 'Spain', 'Attributes': ['T', 'I', 'W'], 'Periods': 10, 'PeriodDuration': 24}
 
     # Set scenario
     scenario = dict()
-    scenario['Objective'] = 'CCEQL'
-    scenario['name'] = 'CCEQL'
+    scenario['Objective'] = Obejctive
+    scenario['name'] = Obejctive
     scenario['exclude_units'] = ['WOOD_Stove', 'NG_Cogeneration']
     scenario['enforce_units'] = []
     scenario["specific"] = ["enforce_DHN"]
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     # reho.get_DHN_costs()  # run one optimization forcing DHN to find costs DHN connection per house
     reho.single_optimization()  # run optimization with DHN costs
 
-    unfixed_file = reho.results['CCEQL'][0]['df_Unit']
+    unfixed_file = reho.results[Obejctive][0]['df_Unit']
     unfixed_file.to_csv('./units_files/unfixed.csv')
 
     df = pd.read_csv('./units_files/modified.csv', index_col = 0)
@@ -49,15 +49,15 @@ if __name__ == '__main__':
 
     reho.fix_units_list=['HeatPump_Air', 'HeatPump_Geothermal', 'NG_Boiler', 'OIL_Boiler', 'ThermalSolar', 'PV']
 
-    reho.scenario['Objective'] = 'CCEQL'
-    reho.scenario['name'] = 'fixed'
+    reho.scenario['Objective'] = Obejctive
+    reho.scenario['name'] = Obejctive
     reho.method['fix_units'] = True  # select the method fixing the unit sizes
 
     reho.get_DHN_costs()
 
     reho.single_optimization()
 
-    fixed_file = reho.results['fixed'][0]['df_Unit']
+    fixed_file = reho.results[Obejctive][0]['df_Unit']
     fixed_file.to_csv('./units_files/fixed.csv')
 
     reho.save_results(format=['xlsx', 'pickle'], filename='fix')

@@ -13,38 +13,12 @@ if __name__ == '__main__':
     # Select clustering options for weather data
     cluster = {'Location': 'Sion', 'Attributes': ['T', 'I', 'W'], 'Periods': 10, 'PeriodDuration': 24}
 
-    energy_systems = [
-        "NG_Boiler",
-        "OIL_Boiler",
-        "WOOD_Stove",
-        "HeatPump_Air",
-        "HeatPump_Lake",
-        "HeatPump_Geothermal",
-        "HeatPump_DHN",
-        "HeatPump_Anergy",
-        "Air_Conditioner_Air",
-        "Air_Conditioner_DHN",
-        "ElectricalHeater_SH",
-        "ElectricalHeater_DHW",
-        "PV",
-        "ThermalSolar",
-        "NG_Cogeneration",
-        "Battery",
-        "WaterTankSH",
-        "WaterTankDHW",
-        "DataHeat_SH",
-        "DataHeat_DHW",
-        "DHN_hex_in",
-        "DHN_hex_out",
-        "DHN_pipes"
-    ]
-
     # Set scenario
     scenario = dict()
-    scenario['Objective'] = 'MAL'
+    scenario['Objective'] = 'LOBDV'
     scenario['name'] = 'totex'
     scenario['exclude_units'] = []
-    scenario['enforce_units'] = ['PV', 'NG_Boiler']
+    scenario['enforce_units'] = []
 
     # Initialize available units and grids
     grids = infrastructure.initialize_grids()
@@ -64,4 +38,10 @@ if __name__ == '__main__':
     import pandas as pd
 
     results = pd.read_pickle(r'C:\Users\Administrator\PycharmProjects\REHO\scripts\examples\results\2a.pickle')
+    plotting.plot_performance(results, plot='gwp', indexed_on='Scn_ID', filename="figures/performance_gwp").show()
+    plotting.plot_performance(results, plot='combined', indexed_on='Scn_ID', filename="figures/performance_combined").show()
     plotting.plot_sankey(results['totex'][0], label='EN_long', color='ColorPastel').show()
+    plotting.plot_sunburst_eud(results, label='EN_long').show()
+    units_to_plot = ['ElectricalHeater', 'HeatPump', 'PV', 'NG_Boiler']
+    plotting.plot_profiles(results['totex'][0], units_to_plot, label='EN_long', color='ColorPastel',
+                           resolution='weekly').show()

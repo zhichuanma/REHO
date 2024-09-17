@@ -33,6 +33,9 @@ NG_Cogeneration,Operation,"electricity, low voltage","heat and power co-generati
 Battery,Construction,"battery, Li-ion, rechargeable, prismatic","market for battery, Li-ion, rechargeable, prismatic",GLO,/kg,ecoinvent_3.8_REHO
 WaterTankSH,Construction,"hot water tank, 600l","hot water tank production, 600l",CH,/unit,ecoinvent_3.8_REHO
 WaterTankDHW,Construction,"hot water tank, 600l","hot water tank production, 600l",CH,/unit,ecoinvent_3.8_REHO
+DHN_hex_in,Construction,"borehole heat exchanger, 150m","borehole heat exchanger production, 150m",CH,/unit,ecoinvent_3.8_REHO
+DHN_hex_out,Construction,"heat pump, brine-water, 10kW","heat pump production, brine-water, 10kW",CH,/unit,ecoinvent_3.8_REHO
+DHN_hex_out,Operation,"heat, brine-water heat pump 10kW","heat production, borehole heat exchanger, brine-water heat pump 10kW",CH,/MJ,ecoinvent_3.8_REHO
 Battery_district,Construction,"battery, Li-ion, rechargeable, prismatic","market for battery, Li-ion, rechargeable, prismatic",GLO,/kg,ecoinvent_3.8_REHO
 NG_Cogeneration_district_Elec,Construction,"heat and power co-generation unit, 50kW electrical, components for electricity only","heat and power co-generation unit construction, 50kW electrical, components for electricity only",RER,/unit,ecoinvent_3.8_REHO
 NG_Cogeneration_district_Heat,Construction,"heat and power co-generation unit, 50kW electrical, components for heat only","heat and power co-generation unit construction, 50kW electrical, components for heat only",RER,/unit,ecoinvent_3.8_REHO
@@ -47,7 +50,7 @@ Oil,Resource,light fuel oil,market for light fuel oil,CH,/kg,ecoinvent_3.8_REHO
 Wood,Resource,"wood chips, dry, measured as dry mass","market for wood chips, dry, measured as dry mass",RER,/kg,ecoinvent_3.8_REHO
 Hydrogen,Resource,"hydrogen, gaseous","market for hydrogen, gaseous",GLO,/kg,ecoinvent_3.8_REHO
 Biogas,Resource,biogas,market for biogas,CH,/m3,ecoinvent_3.8_REHO
-Heat,Resource,"heat, future","market for heat, future",GLO,/MJ,ecoinvent_3.8_REHO
+Heat,Resource,"heat, district or industrial, other than natural gas","market for heat, district or industrial, other than natural gas",CH,/MJ,ecoinvent_3.8_REHO
 Electricity,Resource,"electricity, low voltage","market for electricity, low voltage",CH,/kWh,ecoinvent_3.8_REHO
 Water,Resource,tap water,market for tap water,CH,/kg,ecoinvent_3.8_REHO
 NaturalGas,Flow,"natural gas, low pressure","market for natural gas, low pressure",CH,/m3,ecoinvent_3.8_REHO
@@ -55,7 +58,7 @@ Oil,Flow,light fuel oil,market for light fuel oil,CH,/kg,ecoinvent_3.8_REHO
 Wood,Flow,"wood chips, dry, measured as dry mass","market for wood chips, dry, measured as dry mass",RER,/kg,ecoinvent_3.8_REHO
 Hydrogen,Flow,"hydrogen, gaseous","market for hydrogen, gaseous",GLO,/kg,ecoinvent_3.8_REHO
 Biogas,Flow,biogas,market for biogas,CH,/m3,ecoinvent_3.8_REHO
-Heat,Flow,"heat, future","market for heat, future",GLO,/MJ,ecoinvent_3.8_REHO
+Heat,Flow,"heat, district or industrial, other than natural gas","market for heat, district or industrial, other than natural gas",CH,/MJ,ecoinvent_3.8_REHO
 Electricity,Flow,"electricity, low voltage","market for electricity, low voltage",CH,/kWh,ecoinvent_3.8_REHO
 Water,Flow,tap water,market for tap water,CH,/kg,ecoinvent_3.8_REHO
 Ambient_Heat,Flow,"heat, future","market for heat, future",GLO,/MJ,ecoinvent_3.8_REHO

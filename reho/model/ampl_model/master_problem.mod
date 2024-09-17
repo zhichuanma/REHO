@@ -443,12 +443,12 @@ Costs_tot + EMOO_slack_totex = EMOO_TOTEX * Area_tot;
 subject to EMOO_lca_constraint{k in Lca_kpi} :
 lca_tot[k] <= EMOO_lca[k] * Area_tot;
 
-
+param refactor default 1e3;
 param penalty_ratio default 1e-6;
 var penalties default 0;
 
 subject to penalties_contraints:
-penalties = penalty_ratio * (Costs_inv + Costs_op + sum{k in Lca_kpi} lca_tot[k] +
+penalties = penalty_ratio * (Costs_inv + Costs_op + sum{k in Lca_kpi} lca_tot[k]/refactor +
             sum{l in ResourceBalances,p in PeriodExtreme,t in Time[p]} (Network_supply[l,p,t] + Network_demand[l,p,t])) + Costs_cft;
 
 
@@ -463,7 +463,7 @@ minimize CAPEX: # the second term is added to correspond to objective set in des
 Costs_inv + penalties;
 
 minimize GWP:
-GWP_tot + penalties;
+GWP_tot/refactor + penalties;
 
 minimize land_use:
     lca_tot["land_use"] + penalties;

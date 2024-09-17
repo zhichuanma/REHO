@@ -23,7 +23,7 @@ ElectricalHeater_SH,Construction,0.2,unit,kW
 ElectricalHeater_DHW,Construction,0.2,unit,kW
 ElectricalHeater_SH,Operation,1,kWh,kWh
 ElectricalHeater_DHW,Operation,1,kWh,kWh
-PV,Construction,0.3333333333,unit,kW
+PV,Construction,0.333333333,unit,kW
 PV,Operation,1,kWh,kWh
 ThermalSolar,Construction,1,m2,m2
 NG_Cogeneration_Elec,Construction,1,unit,unit
@@ -34,6 +34,9 @@ NG_Cogeneration,Operation,1,kWh,kWh
 Battery,Construction,8.771929825,kg,kWh
 WaterTankSH,Construction,1.666666667,unit,m3
 WaterTankDHW,Construction,1.666666667,unit,m3
+DHN_hex_in,Construction,0.017692852,unit,m2
+DHN_hex_out,Construction,0.1,unit,kW
+DHN_hex_out,Operation,3.6,MJ,kWh
 Battery_district,Construction,8.771929825,kg,kWh
 NG_Cogeneration_district_Elec,Construction,1,unit,unit
 NG_Cogeneration_district_Heat,Construction,1,unit,unit

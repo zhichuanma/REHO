@@ -49,6 +49,11 @@ WaterTankDHW_store,Water,-1
 WaterTankDHW_store,Water_stored,1
 WaterTankDHW_output,Water,1
 WaterTankDHW_output,Water_stored,-1
+DHN_hex_in,Ambient_Heat,-1.176470588
+DHN_hex_in,Heat,1
+DHN_hex_out,Ambient_Heat,-1
+DHN_hex_out,Electricity,-0.303030303
+DHN_hex_out,Heat,1
 Battery_district_store,Electricity_stored,1
 Battery_district_store,Electricity,-1
 Battery_district_output,Electricity_stored,-1

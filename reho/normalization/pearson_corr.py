@@ -31,3 +31,5 @@ df_clusters = pd.DataFrame({
 representative_indicators = df_clusters.groupby('Cluster')['Indicator'].first()
 print("Selected representative indicators from each cluster:")
 print(representative_indicators)
+
+

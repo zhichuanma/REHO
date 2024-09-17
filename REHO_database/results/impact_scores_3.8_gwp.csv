@@ -1,0 +1,201 @@
+Impact_category,New_code,Value,Name,Type
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",lnw6em939vzd82can7tlkt72tunk12k0,46.67076491109357,NG_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",lnw6em939vzd82can7tlkt72tunk12k0,57.09442700043009,NG_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",lnw6em939vzd82can7tlkt72tunk12k0,50.786858044755704,NG_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",lnw6em939vzd82can7tlkt72tunk12k0,60.26225232004539,NG_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",bxbqepb8uo888o1nguiivu2qvtfmibji,38.749496109696224,OIL_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",bxbqepb8uo888o1nguiivu2qvtfmibji,47.68002414183982,OIL_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",bxbqepb8uo888o1nguiivu2qvtfmibji,42.29074647263762,OIL_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",bxbqepb8uo888o1nguiivu2qvtfmibji,50.45179929828015,OIL_Boiler,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",e5ua7b4fms89lc2bi7k3dpwtwwu7rgq1,136.61560288133586,WOOD_Stove,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",e5ua7b4fms89lc2bi7k3dpwtwwu7rgq1,148.15855659362012,WOOD_Stove,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",e5ua7b4fms89lc2bi7k3dpwtwwu7rgq1,141.2537649331799,WOOD_Stove,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",e5ua7b4fms89lc2bi7k3dpwtwwu7rgq1,151.95215615322195,WOOD_Stove,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",ud1vm1xw51vznml80x751semd2yna5tq,61.03705479723854,HeatPump_Air,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",ud1vm1xw51vznml80x751semd2yna5tq,270.3161687119518,HeatPump_Air,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",ud1vm1xw51vznml80x751semd2yna5tq,142.06800984642692,HeatPump_Air,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",ud1vm1xw51vznml80x751semd2yna5tq,319.17307996027995,HeatPump_Air,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",kjgqqyp6u452mp55wngdg0rhnubgfq8x,61.03705479723851,HeatPump_Lake,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",kjgqqyp6u452mp55wngdg0rhnubgfq8x,270.3161687119518,HeatPump_Lake,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",kjgqqyp6u452mp55wngdg0rhnubgfq8x,142.06800984642692,HeatPump_Lake,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",kjgqqyp6u452mp55wngdg0rhnubgfq8x,319.17307996027995,HeatPump_Lake,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",dayspiqir426yr2qekvn2itkpv2m6jsp,61.03705479723851,HeatPump_Geothermal,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",dayspiqir426yr2qekvn2itkpv2m6jsp,270.3161687119518,HeatPump_Geothermal,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",dayspiqir426yr2qekvn2itkpv2m6jsp,142.06800984642692,HeatPump_Geothermal,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",dayspiqir426yr2qekvn2itkpv2m6jsp,319.17307996027995,HeatPump_Geothermal,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",u2nzlr1u61lmsnovi23jgd8pagdsbald,69.32814316577377,HeatPump_DHN,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",u2nzlr1u61lmsnovi23jgd8pagdsbald,280.3756085985028,HeatPump_DHN,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",u2nzlr1u61lmsnovi23jgd8pagdsbald,151.03360003779275,HeatPump_DHN,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",u2nzlr1u61lmsnovi23jgd8pagdsbald,329.6899048302202,HeatPump_DHN,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",4kfw3jw21epe5z59urkxl5yf72l7buqm,61.03705479723851,HeatPump_Anergy,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",4kfw3jw21epe5z59urkxl5yf72l7buqm,270.3161687119518,HeatPump_Anergy,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",4kfw3jw21epe5z59urkxl5yf72l7buqm,142.06800984642692,HeatPump_Anergy,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",4kfw3jw21epe5z59urkxl5yf72l7buqm,319.17307996027995,HeatPump_Anergy,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",3jqa505y1j0cmrtuns5f4mfvy0h850tw,61.03705479723851,Air_Conditioner_Air,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",3jqa505y1j0cmrtuns5f4mfvy0h850tw,270.3161687119518,Air_Conditioner_Air,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",3jqa505y1j0cmrtuns5f4mfvy0h850tw,142.06800984642692,Air_Conditioner_Air,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",3jqa505y1j0cmrtuns5f4mfvy0h850tw,319.17307996027995,Air_Conditioner_Air,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",ieqxm1afkt5itg64fedxvd1sznmtxyek,61.03705479723851,Air_Conditioner_DHN,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",ieqxm1afkt5itg64fedxvd1sznmtxyek,270.3161687119518,Air_Conditioner_DHN,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",ieqxm1afkt5itg64fedxvd1sznmtxyek,142.06800984642692,Air_Conditioner_DHN,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",ieqxm1afkt5itg64fedxvd1sznmtxyek,319.17307996027995,Air_Conditioner_DHN,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",3ocd8ugb5u5hlf3ei1um25kwycviz5nx,1.3904258583364684,ElectricalHeater_SH,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",3ocd8ugb5u5hlf3ei1um25kwycviz5nx,1.636988659145255,ElectricalHeater_SH,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",3ocd8ugb5u5hlf3ei1um25kwycviz5nx,1.486634133423916,ElectricalHeater_SH,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",3ocd8ugb5u5hlf3ei1um25kwycviz5nx,1.7056201658029684,ElectricalHeater_SH,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",tfjpm7924acyc0hnigo1dnn1odhr27s5,1.3904258583364684,ElectricalHeater_DHW,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",tfjpm7924acyc0hnigo1dnn1odhr27s5,1.636988659145255,ElectricalHeater_DHW,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",tfjpm7924acyc0hnigo1dnn1odhr27s5,1.486634133423916,ElectricalHeater_DHW,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",tfjpm7924acyc0hnigo1dnn1odhr27s5,1.7056201658029684,ElectricalHeater_DHW,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",xff70wffepz8fxkb2lwmvf2rghxgp3oq,1506.4995605400609,PV,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",xff70wffepz8fxkb2lwmvf2rghxgp3oq,1844.4022013208064,PV,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",xff70wffepz8fxkb2lwmvf2rghxgp3oq,1639.9721792275664,PV,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",xff70wffepz8fxkb2lwmvf2rghxgp3oq,1952.8565605934593,PV,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",w08b3fe4gfuio9cusa618cph84arp9xm,117.83505757072444,ThermalSolar,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",w08b3fe4gfuio9cusa618cph84arp9xm,141.63877606531432,ThermalSolar,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",w08b3fe4gfuio9cusa618cph84arp9xm,127.05591022874474,ThermalSolar,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",w08b3fe4gfuio9cusa618cph84arp9xm,148.41497056041482,ThermalSolar,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",j4ujsbrywsy18dhumo6rxvf80htkevgd,65.82918652195555,Battery,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",j4ujsbrywsy18dhumo6rxvf80htkevgd,81.98852246104116,Battery,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",j4ujsbrywsy18dhumo6rxvf80htkevgd,72.2307348879603,Battery,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",j4ujsbrywsy18dhumo6rxvf80htkevgd,87.13567679197118,Battery,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",jnxmpgyt644tbmfxk0zs9ycv4khcgroh,1229.8771878403284,WaterTankSH,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",jnxmpgyt644tbmfxk0zs9ycv4khcgroh,1510.3313387373644,WaterTankSH,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",jnxmpgyt644tbmfxk0zs9ycv4khcgroh,1340.9542303867327,WaterTankSH,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",jnxmpgyt644tbmfxk0zs9ycv4khcgroh,1596.777564385357,WaterTankSH,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",bo7quflj2y5uytsmsnenbbj61paap0hw,1229.8771878403284,WaterTankDHW,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",bo7quflj2y5uytsmsnenbbj61paap0hw,1510.3313387373644,WaterTankDHW,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",bo7quflj2y5uytsmsnenbbj61paap0hw,1340.9542303867327,WaterTankDHW,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",bo7quflj2y5uytsmsnenbbj61paap0hw,1596.777564385357,WaterTankDHW,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",rmhr8z3gjq9c3loydk6uicezoy713z6z,44.7435295885739,DHN_hex_in,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",rmhr8z3gjq9c3loydk6uicezoy713z6z,51.055880581034415,DHN_hex_in,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",rmhr8z3gjq9c3loydk6uicezoy713z6z,47.22299901574629,DHN_hex_in,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",rmhr8z3gjq9c3loydk6uicezoy713z6z,52.85905855755602,DHN_hex_in,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",lggidxemosi7is1nzydh8db77mis9z9f,61.03705479723851,DHN_hex_out,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",lggidxemosi7is1nzydh8db77mis9z9f,270.3161687119518,DHN_hex_out,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",lggidxemosi7is1nzydh8db77mis9z9f,142.06800984642692,DHN_hex_out,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",lggidxemosi7is1nzydh8db77mis9z9f,319.17307996027995,DHN_hex_out,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",4xxpigcobdqaq41bje1iitx373f06dxa,65.82918652195555,Battery_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",4xxpigcobdqaq41bje1iitx373f06dxa,81.98852246104116,Battery_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",4xxpigcobdqaq41bje1iitx373f06dxa,72.2307348879603,Battery_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",4xxpigcobdqaq41bje1iitx373f06dxa,87.13567679197118,Battery_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",6m0245mw18no23vvjxa56rou66tkl463,61.03705479723851,HeatPump_Geothermal_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",6m0245mw18no23vvjxa56rou66tkl463,270.3161687119518,HeatPump_Geothermal_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",6m0245mw18no23vvjxa56rou66tkl463,142.06800984642692,HeatPump_Geothermal_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",6m0245mw18no23vvjxa56rou66tkl463,319.17307996027995,HeatPump_Geothermal_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",spd99sr36f89vxl3mrjsii1h3krw29l0,46.67076491109357,NG_Boiler_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",spd99sr36f89vxl3mrjsii1h3krw29l0,57.09442700043009,NG_Boiler_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",spd99sr36f89vxl3mrjsii1h3krw29l0,50.786858044755704,NG_Boiler_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",spd99sr36f89vxl3mrjsii1h3krw29l0,60.26225232004539,NG_Boiler_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",k8uw8kfdjj79z9gl95tbahko5nikjc32,759.753724840786,NG_Cogeneration,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",k8uw8kfdjj79z9gl95tbahko5nikjc32,900.9530635139356,NG_Cogeneration,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",k8uw8kfdjj79z9gl95tbahko5nikjc32,815.2285565708532,NG_Cogeneration,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",k8uw8kfdjj79z9gl95tbahko5nikjc32,942.4452504153833,NG_Cogeneration,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",l50ms2p7fh75cjkfg265z5r7p6qnlv92,759.7537248407858,NG_Cogeneration_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",l50ms2p7fh75cjkfg265z5r7p6qnlv92,900.9530635139354,NG_Cogeneration_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",l50ms2p7fh75cjkfg265z5r7p6qnlv92,815.2285565708534,NG_Cogeneration_district,Construction
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",l50ms2p7fh75cjkfg265z5r7p6qnlv92,942.4452504153834,NG_Cogeneration_district,Construction
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",dazcq97gqdo6r8lmum0l1sa0nbn7bnue,0.21772870317872922,NG_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",dazcq97gqdo6r8lmum0l1sa0nbn7bnue,0.219904489562411,NG_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",dazcq97gqdo6r8lmum0l1sa0nbn7bnue,0.2186011172276905,NG_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",dazcq97gqdo6r8lmum0l1sa0nbn7bnue,0.2204657311479146,NG_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",lz11datvyppl7r665ohrz7tj8lk6lzv5,0.2866456003161257,OIL_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",lz11datvyppl7r665ohrz7tj8lk6lzv5,0.28755886157788685,OIL_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",lz11datvyppl7r665ohrz7tj8lk6lzv5,0.28705517442783574,OIL_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",lz11datvyppl7r665ohrz7tj8lk6lzv5,0.28781286989585786,OIL_Boiler,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",eo6b4m2hna3e39wti1nxtyd9kl3ungie,0.00518093918085841,WOOD_Stove,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",eo6b4m2hna3e39wti1nxtyd9kl3ungie,0.01802917883191464,WOOD_Stove,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",eo6b4m2hna3e39wti1nxtyd9kl3ungie,0.01112022297377477,WOOD_Stove,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",eo6b4m2hna3e39wti1nxtyd9kl3ungie,0.02442364054354618,WOOD_Stove,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",26jbsn1hcjxlph57062y0inbv9uz00ly,0.00305094668543724,HeatPump_Air,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",26jbsn1hcjxlph57062y0inbv9uz00ly,0.04424782941062376,HeatPump_Air,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",26jbsn1hcjxlph57062y0inbv9uz00ly,0.018955828850487126,HeatPump_Air,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",26jbsn1hcjxlph57062y0inbv9uz00ly,0.05374586861094327,HeatPump_Air,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",b904pzg48v5jal8wl8qdlkzacaeqtrfr,0.00305094668543724,HeatPump_Lake,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",b904pzg48v5jal8wl8qdlkzacaeqtrfr,0.04424782941062376,HeatPump_Lake,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",b904pzg48v5jal8wl8qdlkzacaeqtrfr,0.018955828850487126,HeatPump_Lake,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",b904pzg48v5jal8wl8qdlkzacaeqtrfr,0.05374586861094327,HeatPump_Lake,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",0tfxncvbs7xu1sbml6v5wdd1lpwkwso9,0.00305094668543724,HeatPump_Geothermal,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",0tfxncvbs7xu1sbml6v5wdd1lpwkwso9,0.04424782941062376,HeatPump_Geothermal,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",0tfxncvbs7xu1sbml6v5wdd1lpwkwso9,0.018955828850487126,HeatPump_Geothermal,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",0tfxncvbs7xu1sbml6v5wdd1lpwkwso9,0.05374586861094327,HeatPump_Geothermal,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",tlola1bov4vq6tf99ysgvjuvpnyvbla3,0.00028401854785714347,HeatPump_DHN,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",tlola1bov4vq6tf99ysgvjuvpnyvbla3,0.004318959473383554,HeatPump_DHN,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",tlola1bov4vq6tf99ysgvjuvpnyvbla3,0.0018410369655935815,HeatPump_DHN,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",tlola1bov4vq6tf99ysgvjuvpnyvbla3,0.005249585261651208,HeatPump_DHN,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",cnu0lm8g1ky5ta1fh78yg16smaxf48gy,0.00305094668543724,HeatPump_Anergy,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",cnu0lm8g1ky5ta1fh78yg16smaxf48gy,0.04424782941062376,HeatPump_Anergy,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",cnu0lm8g1ky5ta1fh78yg16smaxf48gy,0.018955828850487126,HeatPump_Anergy,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",cnu0lm8g1ky5ta1fh78yg16smaxf48gy,0.05374586861094327,HeatPump_Anergy,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",abrgxv7thiw0cuxfugbipt9qis78ips8,0.00305094668543724,Air_Conditioner_Air,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",abrgxv7thiw0cuxfugbipt9qis78ips8,0.04424782941062376,Air_Conditioner_Air,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",abrgxv7thiw0cuxfugbipt9qis78ips8,0.018955828850487126,Air_Conditioner_Air,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",abrgxv7thiw0cuxfugbipt9qis78ips8,0.05374586861094327,Air_Conditioner_Air,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",l9y7oxuyqd8092zc1ftaytkjiayta3by,0.00305094668543724,Air_Conditioner_DHN,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",l9y7oxuyqd8092zc1ftaytkjiayta3by,0.04424782941062376,Air_Conditioner_DHN,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",l9y7oxuyqd8092zc1ftaytkjiayta3by,0.018955828850487126,Air_Conditioner_DHN,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",l9y7oxuyqd8092zc1ftaytkjiayta3by,0.05374586861094327,Air_Conditioner_DHN,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",90tnw1pmfe9hyend812j5on8cnxql5r7,0.005157981136468047,ElectricalHeater_SH,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",90tnw1pmfe9hyend812j5on8cnxql5r7,0.006119569284931661,ElectricalHeater_SH,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",90tnw1pmfe9hyend812j5on8cnxql5r7,0.005530567727820871,ElectricalHeater_SH,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",90tnw1pmfe9hyend812j5on8cnxql5r7,0.006404174276678124,ElectricalHeater_SH,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",fotkzlphm6ahjv0zerqbfe7kv7wrmepe,0.005157981136468047,ElectricalHeater_DHW,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",fotkzlphm6ahjv0zerqbfe7kv7wrmepe,0.006119569284931661,ElectricalHeater_DHW,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",fotkzlphm6ahjv0zerqbfe7kv7wrmepe,0.005530567727820871,ElectricalHeater_DHW,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",fotkzlphm6ahjv0zerqbfe7kv7wrmepe,0.0064041742766781234,ElectricalHeater_DHW,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",8f4afoqppkceiqo06ygwu1bikxfgx1vv,4.9695077164266734e-06,PV,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",8f4afoqppkceiqo06ygwu1bikxfgx1vv,6.035683816144346e-06,PV,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",8f4afoqppkceiqo06ygwu1bikxfgx1vv,5.4027077041247315e-06,PV,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",8f4afoqppkceiqo06ygwu1bikxfgx1vv,6.309800036851194e-06,PV,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",ps0m5s3uu3c232a5zhpa3uhp0t6ycado,0.5380936854576749,NG_Cogeneration,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",ps0m5s3uu3c232a5zhpa3uhp0t6ycado,0.5934046191758492,NG_Cogeneration,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",ps0m5s3uu3c232a5zhpa3uhp0t6ycado,0.5604569451606086,NG_Cogeneration,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",ps0m5s3uu3c232a5zhpa3uhp0t6ycado,0.6088286385251332,NG_Cogeneration,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",sijlh0iu4ngwk5b0tin66y1lhg4o3bkv,0.004437768949344049,DHN_hex_out,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",sijlh0iu4ngwk5b0tin66y1lhg4o3bkv,0.03054287955018272,DHN_hex_out,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",sijlh0iu4ngwk5b0tin66y1lhg4o3bkv,0.014518571794568252,DHN_hex_out,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",sijlh0iu4ngwk5b0tin66y1lhg4o3bkv,0.03658115106304596,DHN_hex_out,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",d6q6bqyqz52thtrl1p523rvttpzl6qgp,0.5380936854576749,NG_Cogeneration_district,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",d6q6bqyqz52thtrl1p523rvttpzl6qgp,0.5934046191758492,NG_Cogeneration_district,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",d6q6bqyqz52thtrl1p523rvttpzl6qgp,0.5604569451606086,NG_Cogeneration_district,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",d6q6bqyqz52thtrl1p523rvttpzl6qgp,0.6088286385251332,NG_Cogeneration_district,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",w7korbz5x2ukrhvhoxu9t4ur80ry02il,0.00305094668543724,HeatPump_Geothermal_district,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",w7korbz5x2ukrhvhoxu9t4ur80ry02il,0.04424782941062376,HeatPump_Geothermal_district,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",w7korbz5x2ukrhvhoxu9t4ur80ry02il,0.018955828850487126,HeatPump_Geothermal_district,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",w7korbz5x2ukrhvhoxu9t4ur80ry02il,0.05374586861094327,HeatPump_Geothermal_district,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",umbwsckb63xhceui5olq4imqfy3ykd52,0.21772870317872922,NG_Boiler_district,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",umbwsckb63xhceui5olq4imqfy3ykd52,0.219904489562411,NG_Boiler_district,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",umbwsckb63xhceui5olq4imqfy3ykd52,0.2186011172276905,NG_Boiler_district,Operation
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",umbwsckb63xhceui5olq4imqfy3ykd52,0.2204657311479146,NG_Boiler_district,Operation
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",2vth8ydhvkue36ypmqudm5ynyu8f7rcc,0.030042245697443102,NaturalGas,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",2vth8ydhvkue36ypmqudm5ynyu8f7rcc,0.0900699799996518,NaturalGas,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",2vth8ydhvkue36ypmqudm5ynyu8f7rcc,0.05300681087972536,NaturalGas,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",2vth8ydhvkue36ypmqudm5ynyu8f7rcc,0.10552643200111335,NaturalGas,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",3r2hz13cod946yskmvhik4f8owdc5jzd,0.03588666846973381,Oil,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",3r2hz13cod946yskmvhik4f8owdc5jzd,0.04345578871201113,Oil,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",3r2hz13cod946yskmvhik4f8owdc5jzd,0.038819117656871086,Oil,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",3r2hz13cod946yskmvhik4f8owdc5jzd,0.04546274441987564,Oil,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",7of5otc1bseje98d47l14hmp3xp6uapn,0.013782408172030067,Wood,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",7of5otc1bseje98d47l14hmp3xp6uapn,0.016248964410931065,Wood,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",7of5otc1bseje98d47l14hmp3xp6uapn,0.014785295176470337,Wood,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",7of5otc1bseje98d47l14hmp3xp6uapn,0.017064727443952092,Wood,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",ikd02yeqno40m2yg6fydghdtf7j8v0js,0.04487713131307642,Hydrogen,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",ikd02yeqno40m2yg6fydghdtf7j8v0js,0.052328653015276505,Hydrogen,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",ikd02yeqno40m2yg6fydghdtf7j8v0js,0.047768417204776266,Hydrogen,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",ikd02yeqno40m2yg6fydghdtf7j8v0js,0.054290109767555085,Hydrogen,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",2iobcg2ovxppfgk0mzm4cenchdc1w640,0.017645011177148142,Biogas,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",2iobcg2ovxppfgk0mzm4cenchdc1w640,0.081644606461599,Biogas,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",2iobcg2ovxppfgk0mzm4cenchdc1w640,0.04237021875529696,Biogas,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",2iobcg2ovxppfgk0mzm4cenchdc1w640,0.09808497852259414,Biogas,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",5juwzj70p66s30talq0pdoeocuhg5zar,0.009551308506863861,Heat,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",5juwzj70p66s30talq0pdoeocuhg5zar,0.009978512458059157,Heat,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",5juwzj70p66s30talq0pdoeocuhg5zar,0.009739172767642466,Heat,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",5juwzj70p66s30talq0pdoeocuhg5zar,0.010081043209353118,Heat,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",f9hxtnk8nre6tdscc4pckhyybyyesixz,0.04091902307230212,Electricity,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",f9hxtnk8nre6tdscc4pckhyybyyesixz,0.051349834616663405,Electricity,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",f9hxtnk8nre6tdscc4pckhyybyyesixz,0.04499116065877818,Electricity,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",f9hxtnk8nre6tdscc4pckhyybyyesixz,0.0540547269879578,Electricity,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP100)')",kw0fwrayfiee2b37qkf5228xpf3tixmn,7.658560016622742e-05,Water,Resource
+"('IPCC 2013', 'climate change', 'global temperature change potential (GTP20)')",kw0fwrayfiee2b37qkf5228xpf3tixmn,9.233594396647979e-05,Water,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP100)')",kw0fwrayfiee2b37qkf5228xpf3tixmn,8.280988093179543e-05,Water,Resource
+"('IPCC 2013', 'climate change', 'global warming potential (GWP20)')",kw0fwrayfiee2b37qkf5228xpf3tixmn,9.6944818634475e-05,Water,Resource
